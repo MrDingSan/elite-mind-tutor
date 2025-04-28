@@ -1,0 +1,85 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model User {
+  id            String    @id @default(cuid())
+  name          String
+  email         String    @unique
+  password      String
+  role          UserRole  @default(STUDENT)
+  createdAt     DateTime  @default(now())
+  updatedAt     DateTime  @updatedAt
+  tutorProfile  Tutor?
+  studentProfile Student?
+}
+
+model Tutor {
+  id            String    @id @default(cuid())
+  userId        String    @unique
+  user          User      @relation(fields: [userId], references: [id], onDelete: Cascade)
+  bio           String?
+  qualifications String[]
+  subjects      String[]
+  experience    Int       @default(0)
+  hourlyRate    Float
+  availability  Json?
+  isVerified    Boolean   @default(false)
+  createdAt     DateTime  @default(now())
+  updatedAt     DateTime  @updatedAt
+  sessions      Session[]
+}
+
+model Student {
+  id            String    @id @default(cuid())
+  userId        String    @unique
+  user          User      @relation(fields: [userId], references: [id], onDelete: Cascade)
+  school        String?
+  grade         String?
+  curriculum    Curriculum
+  subjects      String[]
+  createdAt     DateTime  @default(now())
+  updatedAt     DateTime  @updatedAt
+  sessions      Session[]
+}
+
+model Session {
+  id            String    @id @default(cuid())
+  tutorId       String
+  tutor         Tutor     @relation(fields: [tutorId], references: [id])
+  studentId     String
+  student       Student   @relation(fields: [studentId], references: [id])
+  subject       String
+  startTime     DateTime
+  endTime       DateTime
+  status        SessionStatus @default(PENDING)
+  notes         String?
+  createdAt     DateTime  @default(now())
+  updatedAt     DateTime  @updatedAt
+}
+
+enum UserRole {
+  ADMIN
+  TUTOR
+  STUDENT
+}
+
+enum Curriculum {
+  IGCSE
+  IB
+}
+
+enum SessionStatus {
+  PENDING
+  CONFIRMED
+  COMPLETED
+  CANCELLED
+} 
