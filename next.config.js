@@ -7,7 +7,7 @@ const nextConfig = {
     unoptimized: true,
   },
   experimental: {
-    serverActions: true,
+    appDir: true,
   },
   trailingSlash: true,
   webpack: (config, { isServer }) => {
