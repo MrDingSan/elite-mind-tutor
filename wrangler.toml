@@ -1,0 +1,7 @@
+name = "elite-mind-tutor"
+compatibility_date = "2024-01-01"
+
+[[d1_databases]]
+binding = "DB"
+database_name = "elite-mind-tutor-db"
+database_id = "4107a88d-4457-40c2-aa65-e6011e64edc7" 

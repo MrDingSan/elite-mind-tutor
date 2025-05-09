@@ -6,49 +6,49 @@ generator client {
 }
 
 datasource db {
-  provider = "postgresql"
+  provider = "sqlite"
   url      = env("DATABASE_URL")
 }
 
 model User {
   id            String    @id @default(cuid())
-  name          String
   email         String    @unique
+  name          String
   password      String
-  role          UserRole  @default(STUDENT)
+  role          String    // ADMIN, TUTOR, or STUDENT
   createdAt     DateTime  @default(now())
   updatedAt     DateTime  @updatedAt
-  tutorProfile  Tutor?
-  studentProfile Student?
+  tutor         Tutor?
+  student       Student?
 }
 
 model Tutor {
   id            String    @id @default(cuid())
   userId        String    @unique
-  user          User      @relation(fields: [userId], references: [id], onDelete: Cascade)
+  user          User      @relation(fields: [userId], references: [id])
   bio           String?
-  qualifications String[]
-  subjects      String[]
+  qualifications String   // Stored as JSON string
+  subjects      String    // Stored as JSON string
   experience    Int       @default(0)
   hourlyRate    Float
-  availability  Json?
+  availability  String?   // Stored as JSON string
   isVerified    Boolean   @default(false)
+  sessions      Session[]
   createdAt     DateTime  @default(now())
   updatedAt     DateTime  @updatedAt
-  sessions      Session[]
 }
 
 model Student {
   id            String    @id @default(cuid())
   userId        String    @unique
-  user          User      @relation(fields: [userId], references: [id], onDelete: Cascade)
-  school        String?
-  grade         String?
-  curriculum    Curriculum
-  subjects      String[]
+  user          User      @relation(fields: [userId], references: [id])
+  grade         String
+  curriculum    String    // IGCSE or IB
+  subjects      String    // Stored as JSON string
   createdAt     DateTime  @default(now())
   updatedAt     DateTime  @updatedAt
   sessions      Session[]
+  tutorRequests TutorRequest[]
 }
 
 model Session {
@@ -57,29 +57,24 @@ model Session {
   tutor         Tutor     @relation(fields: [tutorId], references: [id])
   studentId     String
   student       Student   @relation(fields: [studentId], references: [id])
-  subject       String
   startTime     DateTime
   endTime       DateTime
-  status        SessionStatus @default(PENDING)
+  status        String    // PENDING, CONFIRMED, COMPLETED, or CANCELLED
   notes         String?
   createdAt     DateTime  @default(now())
   updatedAt     DateTime  @updatedAt
 }
 
-enum UserRole {
-  ADMIN
-  TUTOR
-  STUDENT
-}
-
-enum Curriculum {
-  IGCSE
-  IB
-}
-
-enum SessionStatus {
-  PENDING
-  CONFIRMED
-  COMPLETED
-  CANCELLED
+model TutorRequest {
+  id            String    @id @default(cuid())
+  studentId     String
+  student       Student   @relation(fields: [studentId], references: [id])
+  subject       String
+  studentGrade  String
+  subjects      String    // Stored as JSON string
+  curriculum    String    // IGCSE or IB
+  status        String    // PENDING, CONTACTED, MATCHED, or CLOSED
+  notes         String?
+  createdAt     DateTime  @default(now())
+  updatedAt     DateTime  @updatedAt
 } 
