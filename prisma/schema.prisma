@@ -66,15 +66,25 @@ model Session {
 }
 
 model TutorRequest {
-  id            String    @id @default(cuid())
-  studentId     String
-  student       Student   @relation(fields: [studentId], references: [id])
-  subject       String
-  studentGrade  String
-  subjects      String    // Stored as JSON string
-  curriculum    String    // IGCSE or IB
-  status        String    // PENDING, CONTACTED, MATCHED, or CLOSED
-  notes         String?
-  createdAt     DateTime  @default(now())
-  updatedAt     DateTime  @updatedAt
+  id                  String    @id @default(cuid())
+  requesterName       String    @default("")
+  requesterEmail      String    @default("")
+  requesterPhone      String    @default("")
+  requesterRole       String    @default("")
+  studentName         String    @default("")
+  studentGender       String    @default("")
+  studentSchool       String?
+  studentGrade        String    @default("")
+  subjects            String    @default("[]") // Stored as JSON string
+  curriculum          String    // IGCSE or IB
+  preferredFrequency  String    @default("")
+  preferredDuration   String    @default("")
+  preferredTutorType  String    @default("")
+  address             String    @default("")
+  additionalNotes     String?
+  status              String    @default("PENDING") // PENDING, CONTACTED, MATCHED, or CLOSED
+  createdAt           DateTime  @default(now())
+  updatedAt           DateTime  @updatedAt
+  student             Student   @relation(fields: [studentId], references: [id])
+  studentId           String
 } 

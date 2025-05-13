@@ -1,6 +1,5 @@
 import Link from "next/link";
 import { FaGraduationCap, FaUserTie, FaBook } from "react-icons/fa";
-import TutorRequestForm from "@/components/TutorRequestForm";
 
 export default function Home() {
   return (
@@ -29,29 +28,20 @@ export default function Home() {
               </p>
               <div className="mt-10 flex items-center justify-center gap-x-6">
                 <Link
-                  href="/register/tutor"
+                  href="/request-tutor"
                   className="rounded-md bg-indigo-600 px-3.5 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
+                >
+                  Request a Tutor
+                </Link>
+                <Link
+                  href="/register/tutor"
+                  className="rounded-md bg-white px-3.5 py-2.5 text-sm font-semibold text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 hover:bg-gray-50"
                 >
                   Become a Tutor
                 </Link>
               </div>
             </div>
           </div>
-        </div>
-      </div>
-
-      {/* Tutor Request Form Section */}
-      <div className="bg-gray-50 py-16">
-        <div className="mx-auto max-w-7xl px-6 lg:px-8">
-          <div className="mx-auto max-w-2xl text-center mb-12">
-            <h2 className="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">
-              Find Your Perfect Tutor
-            </h2>
-            <p className="mt-4 text-lg leading-8 text-gray-600">
-              Fill out the form below and we'll match you with the right tutor for your needs.
-            </p>
-          </div>
-          <TutorRequestForm />
         </div>
       </div>
 

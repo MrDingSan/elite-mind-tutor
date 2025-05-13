@@ -5,22 +5,23 @@ import { useForm } from 'react-hook-form';
 import { zodResolver } from '@hookform/resolvers/zod';
 import * as z from 'zod';
 import { motion } from 'framer-motion';
+import { useRouter } from 'next/navigation';
 
 const formSchema = z.object({
-  name: z.string().min(2, 'Name must be at least 2 characters'),
-  email: z.string().email('Invalid email address'),
-  phone: z.string().min(8, 'Phone number must be at least 8 digits'),
-  role: z.enum(['Parent', 'Guardian', 'Student']),
-  studentName: z.string().min(2, 'Student name must be at least 2 characters'),
-  studentGender: z.enum(['Male', 'Female']),
+  name: z.string().optional(),
+  email: z.string().email('Invalid email address').optional(),
+  phone: z.string().optional(),
+  role: z.enum(['Parent', 'Guardian', 'Student']).optional(),
+  studentName: z.string().optional(),
+  studentGender: z.enum(['Male', 'Female']).optional(),
   studentSchool: z.string().optional(),
-  studentGrade: z.string().min(1, 'Please select a grade'),
-  subjects: z.array(z.string()).min(1, 'Please select at least one subject'),
+  studentGrade: z.string().optional(),
+  subjects: z.array(z.string()).optional(),
   curriculum: z.enum(['IGCSE', 'IB']),
-  preferredFrequency: z.string().min(1, 'Please select frequency'),
-  preferredDuration: z.string().min(1, 'Please select duration'),
-  preferredTutorType: z.string().min(1, 'Please select tutor type'),
-  address: z.string().min(1, 'Please enter your address'),
+  preferredFrequency: z.string().optional(),
+  preferredDuration: z.string().optional(),
+  preferredTutorType: z.string().optional(),
+  address: z.string().optional(),
   additionalNotes: z.string().optional(),
 });
 
@@ -28,12 +29,18 @@ type FormData = z.infer<typeof formSchema>;
 
 export default function TutorRequestForm() {
   const [step, setStep] = useState(1);
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const router = useRouter();
   const { register, handleSubmit, formState: { errors }, watch } = useForm<FormData>({
     resolver: zodResolver(formSchema),
   });
 
   const onSubmit = async (data: FormData) => {
+    console.log('Form submission started with data:', data);
+    setIsSubmitting(true);
+    
     try {
+      console.log('Sending request to API...');
       const response = await fetch('/api/tutor-request', {
         method: 'POST',
         headers: {
@@ -42,15 +49,21 @@ export default function TutorRequestForm() {
         body: JSON.stringify(data),
       });
 
+      console.log('API Response status:', response.status);
+      const result = await response.json();
+      console.log('API Response data:', result);
+
       if (!response.ok) {
-        throw new Error('Failed to submit form');
+        throw new Error(result.error || 'Failed to submit form');
       }
 
-      // Handle success
-      alert('Form submitted successfully! We will contact you soon.');
-    } catch (error) {
+      console.log('Form submitted successfully, redirecting...');
+      router.push('/request-tutor/success');
+    } catch (error: any) {
       console.error('Error submitting form:', error);
-      alert('Failed to submit form. Please try again.');
+      alert(error.message || 'Failed to submit form. Please try again.');
+    } finally {
+      setIsSubmitting(false);
     }
   };
 
@@ -197,7 +210,7 @@ export default function TutorRequestForm() {
                       {...register('subjects')}
                       className="rounded border-gray-300 text-indigo-600 shadow-sm focus:border-indigo-500 focus:ring-indigo-500"
                     />
-                    <span className="ml-2 text-sm text-gray-700">{subject}</span>
+                    <span className="ml-2">{subject}</span>
                   </label>
                 ))}
               </div>
@@ -211,10 +224,10 @@ export default function TutorRequestForm() {
                 className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500"
               >
                 <option value="">Select...</option>
-                <option value="1">1 Lesson Per Week</option>
-                <option value="2">2 Lessons Per Week</option>
-                <option value="3">3 Lessons Per Week</option>
-                <option value="4">4+ Lessons Per Week</option>
+                <option value="Once a week">Once a week</option>
+                <option value="Twice a week">Twice a week</option>
+                <option value="Three times a week">Three times a week</option>
+                <option value="More">More</option>
               </select>
               {errors.preferredFrequency && <p className="mt-1 text-sm text-red-600">{errors.preferredFrequency.message}</p>}
             </div>
@@ -226,23 +239,14 @@ export default function TutorRequestForm() {
                 className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500"
               >
                 <option value="">Select...</option>
-                <option value="1.5">1.5 Hours</option>
-                <option value="2">2 Hours</option>
-                <option value="2.5">2.5 Hours</option>
-                <option value="3">3 Hours</option>
+                <option value="1 hour">1 hour</option>
+                <option value="1.5 hours">1.5 hours</option>
+                <option value="2 hours">2 hours</option>
+                <option value="More">More</option>
               </select>
               {errors.preferredDuration && <p className="mt-1 text-sm text-red-600">{errors.preferredDuration.message}</p>}
             </div>
-          </motion.div>
-        )}
 
-        {step === 4 && (
-          <motion.div
-            initial={{ opacity: 0, x: 20 }}
-            animate={{ opacity: 1, x: 0 }}
-            exit={{ opacity: 0, x: -20 }}
-            className="space-y-6"
-          >
             <div>
               <label className="block text-sm font-medium text-gray-700">Preferred Tutor Type</label>
               <select
@@ -250,18 +254,18 @@ export default function TutorRequestForm() {
                 className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500"
               >
                 <option value="">Select...</option>
-                <option value="Part-Time">Part-Time Tutor ($25-$35/hr)</option>
-                <option value="Full-Time">Full-Time Tutor ($35-$50/hr)</option>
-                <option value="MOE">Ex-/Current MOE Teacher ($70-$80/hr)</option>
+                <option value="Online">Online</option>
+                <option value="In-person">In-person</option>
+                <option value="Both">Both</option>
               </select>
               {errors.preferredTutorType && <p className="mt-1 text-sm text-red-600">{errors.preferredTutorType.message}</p>}
             </div>
 
             <div>
               <label className="block text-sm font-medium text-gray-700">Address</label>
-              <textarea
+              <input
+                type="text"
                 {...register('address')}
-                rows={3}
                 className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500"
               />
               {errors.address && <p className="mt-1 text-sm text-red-600">{errors.address.message}</p>}
@@ -271,38 +275,39 @@ export default function TutorRequestForm() {
               <label className="block text-sm font-medium text-gray-700">Additional Notes</label>
               <textarea
                 {...register('additionalNotes')}
-                rows={3}
                 className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500"
               />
             </div>
           </motion.div>
         )}
 
-        <div className="flex justify-between pt-4">
+        <div className="flex justify-between mt-6">
           {step > 1 && (
             <button
               type="button"
               onClick={() => setStep(step - 1)}
-              className="inline-flex justify-center rounded-md border border-gray-300 bg-white px-4 py-2 text-sm font-medium text-gray-700 shadow-sm hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2"
+              className="px-4 py-2 text-sm font-medium text-gray-700 bg-gray-100 rounded-md hover:bg-gray-200"
+              disabled={isSubmitting}
             >
               Previous
             </button>
           )}
-          
-          {step < 4 ? (
+          {step < 3 ? (
             <button
               type="button"
               onClick={() => setStep(step + 1)}
-              className="inline-flex justify-center rounded-md border border-transparent bg-indigo-600 px-4 py-2 text-sm font-medium text-white shadow-sm hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2"
+              className="px-4 py-2 text-sm font-medium text-white bg-indigo-600 rounded-md hover:bg-indigo-700"
+              disabled={isSubmitting}
             >
               Next
             </button>
           ) : (
             <button
               type="submit"
-              className="inline-flex justify-center rounded-md border border-transparent bg-indigo-600 px-4 py-2 text-sm font-medium text-white shadow-sm hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2"
+              className="px-4 py-2 text-sm font-medium text-white bg-indigo-600 rounded-md hover:bg-indigo-700 disabled:opacity-50"
+              disabled={isSubmitting}
             >
-              Submit Request
+              {isSubmitting ? 'Submitting...' : 'Submit'}
             </button>
           )}
         </div>
