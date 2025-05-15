@@ -1,20 +1,16 @@
 import { PrismaClient } from '@prisma/client'
 import { PrismaD1 } from '@prisma/adapter-d1'
-import { D1Database } from '@cloudflare/workers-types'
+import type { D1Database } from '@cloudflare/workers-types'
 
+// ✅ Fix TypeScript error: "Element implicitly has an 'any' type"
 declare global {
-  var prisma: PrismaClient | undefined
+  var prisma: PrismaClient | undefined;
 }
 
-export const prisma = global.prisma || new PrismaClient({
-  datasources: {
-    db: {
-      url: process.env.DB as string,
-    },
-  },
-  adapter: new PrismaD1(process.env.DB as D1Database),
+export const prisma = globalThis.prisma ?? new PrismaClient({
+  adapter: new PrismaD1(process.env.DB as unknown as D1Database),
 })
 
 if (process.env.NODE_ENV !== 'production') {
-  global.prisma = prisma
-} 
+  globalThis.prisma = prisma
+}
