@@ -1,5 +1,5 @@
 /** @type {import('tailwindcss').Config} */
-const { colors: defaultColors } = require('tailwindcss/defaultTheme');
+const defaultTheme = require('tailwindcss/defaultTheme');
 
 module.exports = {
   content: [
@@ -18,7 +18,7 @@ module.exports = {
     },
     extend: {
       colors: {
-        ...defaultColors, // ✅ Include all default Tailwind colors like border-gray-200
+        ...defaultTheme.colors, // ✅ Restores default Tailwind colors like border-gray-200
         border: "hsl(var(--border))",
         input: "hsl(var(--input))",
         ring: "hsl(var(--ring))",
