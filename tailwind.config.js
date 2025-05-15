@@ -1,9 +1,12 @@
 /** @type {import('tailwindcss').Config} */
+const { colors: defaultColors } = require('tailwindcss/defaultTheme');
+
 module.exports = {
   content: [
     './src/pages/**/*.{js,ts,jsx,tsx,mdx}',
     './src/components/**/*.{js,ts,jsx,tsx,mdx}',
     './src/app/**/*.{js,ts,jsx,tsx,mdx}',
+    './src/**/*.{js,ts,jsx,tsx}',
   ],
   theme: {
     container: {
@@ -15,6 +18,7 @@ module.exports = {
     },
     extend: {
       colors: {
+        ...defaultColors, // ✅ Include all default Tailwind colors like border-gray-200
         border: "hsl(var(--border))",
         input: "hsl(var(--input))",
         ring: "hsl(var(--ring))",
@@ -57,4 +61,4 @@ module.exports = {
     },
   },
   plugins: [],
-} 
+};
