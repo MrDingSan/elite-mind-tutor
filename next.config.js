@@ -13,9 +13,9 @@ const nextConfig = {
     return config;
   },
   // Configure for Cloudflare Pages
-  output: 'export',
-  distDir: 'out',
-  trailingSlash: true,
+  // output: 'export', // Removed to enable API routes
+  // distDir: 'out', // Removed as not required for API routes
+  // trailingSlash: true, // Removed as not required for API routes
 };
 
 module.exports = nextConfig; 

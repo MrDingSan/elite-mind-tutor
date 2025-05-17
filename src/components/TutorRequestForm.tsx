@@ -75,11 +75,16 @@ export default function TutorRequestForm() {
           'Accept': 'application/json'
         },
         body: JSON.stringify(apiData),
+        credentials: 'same-origin'
       });
 
       console.log('Response status:', response.status);
       console.log('Response headers:', Object.fromEntries(response.headers.entries()));
       
+      if (response.status === 405) {
+        throw new Error('Method not allowed. Please ensure the API endpoint is properly configured.');
+      }
+
       const responseText = await response.text();
       console.log('Raw response text:', responseText);
 
@@ -99,6 +104,11 @@ export default function TutorRequestForm() {
         const errorMessage = result.error || `Server error: ${response.status}`;
         console.error('Server error:', errorMessage);
         throw new Error(errorMessage);
+      }
+
+      if (!result.success) {
+        console.error('Request failed:', result);
+        throw new Error(result.message || 'Request failed');
       }
 
       if (!result.data) {
