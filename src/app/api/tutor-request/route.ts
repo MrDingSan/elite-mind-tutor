@@ -116,4 +116,6 @@ export async function POST(request: Request) {
       }
     });
   }
-} 
+}
+
+export const runtime = 'edge'; 
