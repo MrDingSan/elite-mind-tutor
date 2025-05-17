@@ -1,5 +1,6 @@
 import { NextResponse } from 'next/server';
 import { PrismaClient } from '@prisma/client';
+import { TutorRequestData } from '@/types/tutor-request';
 
 export const dynamic = 'force-dynamic';
 
@@ -7,7 +8,7 @@ const prisma = new PrismaClient();
 
 export async function POST(request: Request) {
   try {
-    const data = await request.json();
+    const data = await request.json() as TutorRequestData;
     console.log('Received data:', data);
 
     if (!data.curriculum) {
