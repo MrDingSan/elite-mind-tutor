@@ -12,6 +12,9 @@ const nextConfig = {
     };
     return config;
   },
+  // Enable static exports for Cloudflare Pages
+  output: 'standalone',
+  distDir: '.next',
 };
 
 module.exports = nextConfig; 

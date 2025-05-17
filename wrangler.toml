@@ -6,6 +6,7 @@ bucket = ".next"
 
 [build]
 command = "npm run build"
+pages_build_output_dir = ".next"
 
 [[d1_databases]]
 binding = "DB"
