@@ -7,6 +7,10 @@ declare global {
   var prisma: PrismaClient | undefined;
 }
 
+if (!process.env.DB) {
+  throw new Error('DB environment variable is not set');
+}
+
 export const prisma = globalThis.prisma ?? new PrismaClient({
   adapter: new PrismaD1(process.env.DB as unknown as D1Database),
 })

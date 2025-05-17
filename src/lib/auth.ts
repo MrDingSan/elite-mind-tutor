@@ -4,6 +4,10 @@ import { PrismaAdapter } from "@auth/prisma-adapter";
 import { prisma } from "@/lib/prisma";
 import bcrypt from "bcryptjs";
 
+if (!process.env.NEXTAUTH_SECRET) {
+  throw new Error("NEXTAUTH_SECRET environment variable is not set");
+}
+
 export const authOptions: NextAuthOptions = {
   adapter: PrismaAdapter(prisma),
   providers: [
@@ -49,4 +53,4 @@ export const authOptions: NextAuthOptions = {
     strategy: "jwt",
   },
   secret: process.env.NEXTAUTH_SECRET,
-}; 
+} as const; 
