@@ -1,87 +1,95 @@
 import { NextResponse } from 'next/server';
-import { PrismaClient } from '@prisma/client';
-import { TutorRequestData } from '@/types/tutor-request';
-import { ApiResponse, TutorRequestResponse } from '@/types/api';
+import { prisma } from '@/lib/prisma';
 
-export const dynamic = 'force-dynamic';
-
-const prisma = new PrismaClient();
+interface TutorRequestData {
+  requesterName: string;
+  requesterEmail: string;
+  requesterPhone: string;
+  requesterRole: string;
+  studentName: string;
+  studentGender: string;
+  studentSchool?: string;
+  studentGrade: string;
+  subjects: string[];
+  curriculum: string;
+  preferredFrequency: string;
+  preferredDuration: string;
+  preferredTutorType: string;
+  address: string;
+  additionalNotes?: string;
+}
 
 export async function POST(request: Request) {
   try {
-    const data = await request.json() as TutorRequestData;
-    console.log('Received data:', data);
+    const body = await request.json() as TutorRequestData;
+    
+    // First, try to find an existing student with the given email
+    const existingUser = await prisma.user.findUnique({
+      where: { email: body.requesterEmail },
+      include: { student: true }
+    });
 
-    if (!data.curriculum) {
-      return NextResponse.json<ApiResponse>(
-        { error: 'Curriculum is required' },
-        { status: 400 }
-      );
+    let studentId: string;
+
+    if (existingUser?.student) {
+      // Use existing student
+      studentId = existingUser.student.id;
+    } else {
+      // Create new student
+      const newStudent = await prisma.student.create({
+        data: {
+          grade: body.studentGrade || '',
+          curriculum: body.curriculum,
+          subjects: JSON.stringify(body.subjects || []),
+          user: {
+            create: {
+              email: body.requesterEmail || '',
+              name: body.requesterName || '',
+              password: '', // This will be set later when the user registers
+              role: 'STUDENT'
+            }
+          }
+        }
+      });
+      studentId = newStudent.id;
     }
-
-    // Create a temporary user for the student if email not provided
-    const user = await prisma.user.create({
-      data: {
-        email: data.email || `temp-${Date.now()}@example.com`,
-        name: data.studentName || 'Temporary Student',
-        password: 'temporary-password',
-        role: 'STUDENT'
-      }
-    });
-
-    // Create a student record
-    const student = await prisma.student.create({
-      data: {
-        userId: user.id,
-        grade: data.studentGrade || '',
-        curriculum: data.curriculum,
-        subjects: JSON.stringify(data.subjects || [])
-      }
-    });
 
     // Create the tutor request
     const tutorRequest = await prisma.tutorRequest.create({
       data: {
-        requesterName: data.name || '',
-        requesterEmail: data.email || '',
-        requesterPhone: data.phone || '',
-        requesterRole: data.role || '',
-        studentName: data.studentName || '',
-        studentGender: data.studentGender || '',
-        studentSchool: data.studentSchool || '',
-        studentGrade: data.studentGrade || '',
-        subjects: JSON.stringify(data.subjects || []),
-        curriculum: data.curriculum,
-        preferredFrequency: data.preferredFrequency || '',
-        preferredDuration: data.preferredDuration || '',
-        preferredTutorType: data.preferredTutorType || '',
-        address: data.address || '',
-        additionalNotes: data.additionalNotes || '',
+        requesterName: body.requesterName || '',
+        requesterEmail: body.requesterEmail || '',
+        requesterPhone: body.requesterPhone || '',
+        requesterRole: body.requesterRole || '',
+        studentName: body.studentName || '',
+        studentGender: body.studentGender || '',
+        studentSchool: body.studentSchool || '',
+        studentGrade: body.studentGrade || '',
+        subjects: JSON.stringify(body.subjects || []),
+        curriculum: body.curriculum,
+        preferredFrequency: body.preferredFrequency || '',
+        preferredDuration: body.preferredDuration || '',
+        preferredTutorType: body.preferredTutorType || '',
+        address: body.address || '',
+        additionalNotes: body.additionalNotes || '',
         status: 'PENDING',
-        studentId: student.id
+        studentId: studentId
       }
     });
 
-    console.log('Created tutor request:', tutorRequest);
-    return NextResponse.json<ApiResponse<TutorRequestResponse>>({
-      data: {
-        ...tutorRequest,
-        subjects: JSON.parse(tutorRequest.subjects as string),
-        createdAt: tutorRequest.createdAt.toISOString(),
-        updatedAt: tutorRequest.updatedAt.toISOString(),
-        studentSchool: tutorRequest.studentSchool || '',
-        studentGender: tutorRequest.studentGender || '',
-        preferredFrequency: tutorRequest.preferredFrequency || '',
-        preferredDuration: tutorRequest.preferredDuration || '',
-        preferredTutorType: tutorRequest.preferredTutorType || '',
-        address: tutorRequest.address || '',
-        additionalNotes: tutorRequest.additionalNotes || '',
-      }
+    return NextResponse.json({ 
+      success: true, 
+      message: 'Tutor request submitted successfully',
+      data: tutorRequest 
     });
   } catch (error) {
-    console.error('Error creating tutor request:', error);
-    return NextResponse.json<ApiResponse>(
-      { error: 'Failed to create tutor request' },
+    console.error('Error submitting tutor request:', error);
+    return NextResponse.json(
+      { 
+        success: false, 
+        message: 'Failed to submit tutor request',
+        error: error instanceof Error ? error.message : 'Unknown error'
+      },
       { status: 500 }
     );
   }

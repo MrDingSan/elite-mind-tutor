@@ -42,20 +42,75 @@ export default function TutorRequestForm() {
   const onSubmit = async (data: FormData) => {
     setIsSubmitting(true);
     try {
+      console.log('Submitting form data:', data);
+      
+      // Ensure curriculum is selected
+      if (!data.curriculum) {
+        throw new Error('Please select a curriculum');
+      }
+
+      // Transform the data to match the API's expected format
+      const apiData = {
+        requesterName: data.name || '',
+        requesterEmail: data.email || '',
+        requesterPhone: data.phone || '',
+        requesterRole: data.role || '',
+        studentName: data.studentName || '',
+        studentGender: data.studentGender || '',
+        studentSchool: data.studentSchool || '',
+        studentGrade: data.studentGrade || '',
+        subjects: data.subjects || [],
+        curriculum: data.curriculum,
+        preferredFrequency: data.preferredFrequency || '',
+        preferredDuration: data.preferredDuration || '',
+        preferredTutorType: data.preferredTutorType || '',
+        address: data.address || '',
+        additionalNotes: data.additionalNotes || ''
+      };
+
       const response = await fetch('/api/tutor-request', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
+          'Accept': 'application/json'
         },
-        body: JSON.stringify(data),
+        body: JSON.stringify(apiData),
       });
-      const result = await response.json() as ApiResponse<TutorRequestResponse>;
-      if (!response.ok) {
-        throw new Error(result.error || 'Failed to submit form');
+
+      console.log('Response status:', response.status);
+      console.log('Response headers:', Object.fromEntries(response.headers.entries()));
+      
+      const responseText = await response.text();
+      console.log('Raw response text:', responseText);
+
+      if (!responseText) {
+        throw new Error('Empty response from server');
       }
+
+      let result: ApiResponse<TutorRequestResponse>;
+      try {
+        result = JSON.parse(responseText);
+      } catch (e) {
+        console.error('Failed to parse response:', e);
+        throw new Error(`Invalid JSON response: ${responseText}`);
+      }
+
+      if (!response.ok) {
+        const errorMessage = result.error || `Server error: ${response.status}`;
+        console.error('Server error:', errorMessage);
+        throw new Error(errorMessage);
+      }
+
+      if (!result.data) {
+        console.error('No data in response:', result);
+        throw new Error('No data in response');
+      }
+
+      console.log('Success:', result.data);
       router.push('/request-tutor/success');
     } catch (error: any) {
-      alert(error.message || 'Failed to submit form. Please try again.');
+      console.error('Form submission error:', error);
+      alert(`Error: ${error.message}\n\nPlease check the browser console for more details.`);
     } finally {
       setIsSubmitting(false);
     }

@@ -13,8 +13,9 @@ const nextConfig = {
     return config;
   },
   // Configure for Cloudflare Pages
-  output: 'standalone',
-  distDir: '.next',
+  output: 'export',
+  distDir: 'out',
+  trailingSlash: true,
 };
 
 module.exports = nextConfig; 
