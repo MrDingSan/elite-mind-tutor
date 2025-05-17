@@ -5,6 +5,7 @@ import { useForm } from 'react-hook-form';
 import { zodResolver } from '@hookform/resolvers/zod';
 import * as z from 'zod';
 import { useRouter } from 'next/navigation';
+import { ApiResponse, TutorRequestResponse } from '@/types/api';
 
 const formSchema = z.object({
   name: z.string().optional(),
@@ -48,7 +49,7 @@ export default function TutorRequestForm() {
         },
         body: JSON.stringify(data),
       });
-      const result = await response.json();
+      const result = await response.json() as ApiResponse<TutorRequestResponse>;
       if (!response.ok) {
         throw new Error(result.error || 'Failed to submit form');
       }

@@ -1,6 +1,7 @@
 import { NextResponse } from 'next/server';
 import { PrismaClient } from '@prisma/client';
 import { TutorRequestData } from '@/types/tutor-request';
+import { ApiResponse, TutorRequestResponse } from '@/types/api';
 
 export const dynamic = 'force-dynamic';
 
@@ -12,7 +13,7 @@ export async function POST(request: Request) {
     console.log('Received data:', data);
 
     if (!data.curriculum) {
-      return NextResponse.json(
+      return NextResponse.json<ApiResponse>(
         { error: 'Curriculum is required' },
         { status: 400 }
       );
@@ -62,10 +63,24 @@ export async function POST(request: Request) {
     });
 
     console.log('Created tutor request:', tutorRequest);
-    return NextResponse.json(tutorRequest);
+    return NextResponse.json<ApiResponse<TutorRequestResponse>>({
+      data: {
+        ...tutorRequest,
+        subjects: JSON.parse(tutorRequest.subjects as string),
+        createdAt: tutorRequest.createdAt.toISOString(),
+        updatedAt: tutorRequest.updatedAt.toISOString(),
+        studentSchool: tutorRequest.studentSchool || '',
+        studentGender: tutorRequest.studentGender || '',
+        preferredFrequency: tutorRequest.preferredFrequency || '',
+        preferredDuration: tutorRequest.preferredDuration || '',
+        preferredTutorType: tutorRequest.preferredTutorType || '',
+        address: tutorRequest.address || '',
+        additionalNotes: tutorRequest.additionalNotes || '',
+      }
+    });
   } catch (error) {
     console.error('Error creating tutor request:', error);
-    return NextResponse.json(
+    return NextResponse.json<ApiResponse>(
       { error: 'Failed to create tutor request' },
       { status: 500 }
     );
