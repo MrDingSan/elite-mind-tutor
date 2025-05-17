@@ -12,9 +12,9 @@ const nextConfig = {
     };
     return config;
   },
-  // Configure for static export
-  output: 'export',
-  distDir: 'out',
+  // Configure for Cloudflare Pages
+  output: 'standalone',
+  distDir: '.next',
 };
 
 module.exports = nextConfig; 
