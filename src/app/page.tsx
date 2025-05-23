@@ -1,6 +1,6 @@
 import React from 'react';
 import Link from "next/link";
-import { FaGraduationCap, FaUserTie, FaBook } from "react-icons/fa";
+import { FaGraduationCap, FaUserTie, FaBook, FaQuoteLeft, FaQuestionCircle } from "react-icons/fa";
 import Head from 'next/head';
 
 export default function Home() {
@@ -109,32 +109,46 @@ export default function Home() {
         </div>
       </div>
 
-      {/* New sections for content */}
-      <section className="mb-8 bg-gray-50 p-8 rounded-lg shadow-md">
-        <h2 className="text-2xl font-semibold mb-2">Our Services</h2>
-        <ul className="list-disc pl-5">
-          <li>IGCSE Curriculum Tutoring</li>
-          <li>IB Curriculum Tutoring</li>
-          <li>Personalized Learning Plans</li>
-          <li>Online and In-Person Sessions</li>
-        </ul>
-      </section>
+      {/* Services, Testimonials, FAQ as cards */}
+      <div className="mx-auto max-w-7xl px-6 lg:px-8 pb-24 grid grid-cols-1 md:grid-cols-3 gap-8">
+        {/* Services Card */}
+        <div className="bg-white rounded-xl shadow-lg p-8 flex flex-col items-center text-center border-t-4 border-indigo-600">
+          <FaGraduationCap className="text-indigo-600 text-4xl mb-4" />
+          <h2 className="text-xl font-bold mb-2">Our Services</h2>
+          <ul className="list-disc pl-5 text-left">
+            <li>IGCSE Curriculum Tutoring</li>
+            <li>IB Curriculum Tutoring</li>
+            <li>Personalized Learning Plans</li>
+            <li>Online and In-Person Sessions</li>
+          </ul>
+        </div>
+        {/* Testimonials Card */}
+        <div className="bg-white rounded-xl shadow-lg p-8 flex flex-col items-center text-center border-t-4 border-pink-400">
+          <FaQuoteLeft className="text-pink-400 text-4xl mb-4" />
+          <h2 className="text-xl font-bold mb-2">Testimonials</h2>
+          <blockquote className="italic mb-2">"Elite Mind Tutor has been a game-changer for my child's education. The tutors are highly qualified and very supportive."</blockquote>
+          <span className="text-sm text-gray-500 mb-4">- Parent</span>
+          <blockquote className="italic mb-2">"I improved my grades significantly thanks to the personalized tutoring sessions."</blockquote>
+          <span className="text-sm text-gray-500">- Student</span>
+        </div>
+        {/* FAQ Card */}
+        <div className="bg-white rounded-xl shadow-lg p-8 flex flex-col items-center text-center border-t-4 border-green-500">
+          <FaQuestionCircle className="text-green-500 text-4xl mb-4" />
+          <h2 className="text-xl font-bold mb-2">Frequently Asked Questions</h2>
+          <div className="mb-2">
+            <h3 className="font-semibold">What subjects do you offer tutoring for?</h3>
+            <p className="text-sm">We offer tutoring for a wide range of subjects, including IGCSE and IB curriculum subjects.</p>
+          </div>
+          <div>
+            <h3 className="font-semibold">How do I schedule a tutoring session?</h3>
+            <p className="text-sm">You can schedule a tutoring session by contacting us through our website or by phone.</p>
+          </div>
+        </div>
+      </div>
 
-      <section className="mb-8 bg-gray-50 p-8 rounded-lg shadow-md">
-        <h2 className="text-2xl font-semibold mb-2">Testimonials</h2>
-        <p>"Elite Mind Tutor has been a game-changer for my child's education. The tutors are highly qualified and very supportive." - Parent</p>
-        <p>"I improved my grades significantly thanks to the personalized tutoring sessions." - Student</p>
-      </section>
-
-      <section className="mb-8 bg-gray-50 p-8 rounded-lg shadow-md">
-        <h2 className="text-2xl font-semibold mb-2">Frequently Asked Questions</h2>
-        <h3 className="text-xl font-semibold mb-2">What subjects do you offer tutoring for?</h3>
-        <p>We offer tutoring for a wide range of subjects, including IGCSE and IB curriculum subjects.</p>
-        <h3 className="text-xl font-semibold mb-2">How do I schedule a tutoring session?</h3>
-        <p>You can schedule a tutoring session by contacting us through our website or by phone.</p>
-      </section>
-
-      <Link href="/contact" className="bg-indigo-600 text-white px-4 py-2 rounded-md">Contact Us</Link>
+      <div className="flex justify-center pb-16">
+        <Link href="/contact" className="bg-indigo-600 text-white px-6 py-3 rounded-lg text-lg font-semibold shadow-md hover:bg-indigo-700 transition">Contact Us</Link>
+      </div>
     </div>
   );
 }
