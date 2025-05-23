@@ -110,7 +110,7 @@ export default function Home() {
       </div>
 
       {/* New sections for content */}
-      <section className="mb-8">
+      <section className="mb-8 bg-gray-50 p-8 rounded-lg shadow-md">
         <h2 className="text-2xl font-semibold mb-2">Our Services</h2>
         <ul className="list-disc pl-5">
           <li>IGCSE Curriculum Tutoring</li>
@@ -120,13 +120,13 @@ export default function Home() {
         </ul>
       </section>
 
-      <section className="mb-8">
+      <section className="mb-8 bg-gray-50 p-8 rounded-lg shadow-md">
         <h2 className="text-2xl font-semibold mb-2">Testimonials</h2>
         <p>"Elite Mind Tutor has been a game-changer for my child's education. The tutors are highly qualified and very supportive." - Parent</p>
         <p>"I improved my grades significantly thanks to the personalized tutoring sessions." - Student</p>
       </section>
 
-      <section className="mb-8">
+      <section className="mb-8 bg-gray-50 p-8 rounded-lg shadow-md">
         <h2 className="text-2xl font-semibold mb-2">Frequently Asked Questions</h2>
         <h3 className="text-xl font-semibold mb-2">What subjects do you offer tutoring for?</h3>
         <p>We offer tutoring for a wide range of subjects, including IGCSE and IB curriculum subjects.</p>
