@@ -8,12 +8,12 @@ export default function Navigation() {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
-    <nav className="bg-white shadow-sm">
+    <nav className="bg-white shadow-sm sticky top-0 z-50">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="flex h-16 justify-between">
           <div className="flex">
             <div className="flex flex-shrink-0 items-center">
-              <Link href="/" className="text-2xl font-bold text-indigo-600">
+              <Link href="/" className="text-2xl font-bold text-indigo-600 hover:text-indigo-500">
                 Elite Mind Tutor
               </Link>
             </div>
@@ -25,16 +25,16 @@ export default function Navigation() {
                 About
               </Link>
               <Link
-                href="/curriculum"
+                href="/services"
                 className="inline-flex items-center border-b-2 border-transparent px-1 pt-1 text-sm font-medium text-gray-500 hover:border-gray-300 hover:text-gray-700"
               >
-                Curriculum
+                Services
               </Link>
               <Link
-                href="/tutors"
+                href="/faq"
                 className="inline-flex items-center border-b-2 border-transparent px-1 pt-1 text-sm font-medium text-gray-500 hover:border-gray-300 hover:text-gray-700"
               >
-                Find Tutors
+                FAQ
               </Link>
               <Link
                 href="/contact"
@@ -46,10 +46,10 @@ export default function Navigation() {
           </div>
           <div className="hidden sm:ml-6 sm:flex sm:items-center">
             <Link
-              href="/login"
+              href="/request-tutor"
               className="rounded-md bg-indigo-600 px-3 py-2 text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
             >
-              Sign in
+              Request a Tutor
             </Link>
           </div>
           <div className="-mr-2 flex items-center sm:hidden">
@@ -80,16 +80,16 @@ export default function Navigation() {
               About
             </Link>
             <Link
-              href="/curriculum"
+              href="/services"
               className="block border-l-4 border-transparent py-2 pl-3 pr-4 text-base font-medium text-gray-500 hover:border-gray-300 hover:bg-gray-50 hover:text-gray-700"
             >
-              Curriculum
+              Services
             </Link>
             <Link
-              href="/tutors"
+              href="/faq"
               className="block border-l-4 border-transparent py-2 pl-3 pr-4 text-base font-medium text-gray-500 hover:border-gray-300 hover:bg-gray-50 hover:text-gray-700"
             >
-              Find Tutors
+              FAQ
             </Link>
             <Link
               href="/contact"
@@ -101,10 +101,10 @@ export default function Navigation() {
           <div className="border-t border-gray-200 pb-3 pt-4">
             <div className="flex items-center px-4">
               <Link
-                href="/login"
+                href="/request-tutor"
                 className="block w-full rounded-md bg-indigo-600 px-3 py-2 text-center text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
               >
-                Sign in
+                Request a Tutor
               </Link>
             </div>
           </div>

@@ -30,7 +30,9 @@ export default function RootLayout({
         "min-h-full bg-white"
       )}>
         <Navigation />
-        {children}
+        <main className="flex-grow">
+          {children}
+        </main>
       </body>
     </html>
   );
