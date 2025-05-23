@@ -1,6 +1,5 @@
 import React from 'react';
 import Link from "next/link";
-import { FaGraduationCap, FaUserTie, FaBook } from "react-icons/fa";
 import Head from 'next/head';
 
 export default function Home() {
