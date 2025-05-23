@@ -1,7 +1,6 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
-import Link from "next/link";
 import { cn } from "@/lib/utils";
 import Navigation from "@/components/Navigation";
 import Head from 'next/head';
@@ -30,15 +29,6 @@ export default function RootLayout({
         inter.className,
         "min-h-full bg-white"
       )}>
-        <nav className="bg-indigo-600 text-white p-4">
-          <ul className="flex space-x-4">
-            <li><Link href="/">Home</Link></li>
-            <li><Link href="/about">About Us</Link></li>
-            <li><Link href="/services">Services</Link></li>
-            <li><Link href="/faq">FAQ</Link></li>
-            <li><Link href="/contact">Contact</Link></li>
-          </ul>
-        </nav>
         <Navigation />
         {children}
       </body>
