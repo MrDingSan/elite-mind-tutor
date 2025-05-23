@@ -3,6 +3,7 @@ import { Inter } from "next/font/google";
 import "./globals.css";
 import { cn } from "@/lib/utils";
 import Navigation from "@/components/Navigation";
+import Head from 'next/head';
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -18,6 +19,12 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className="h-full">
+      <Head>
+        <title>Elite Mind Tutor</title>
+        <meta name="description" content="Elite Mind Tutor - Your trusted source for tutoring services." />
+        <meta name="keywords" content="tutoring, education, online tutoring, student help" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      </Head>
       <body className={cn(
         inter.className,
         "min-h-full bg-white"
