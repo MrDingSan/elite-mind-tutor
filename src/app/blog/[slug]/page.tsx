@@ -2,7 +2,7 @@
 
 import React, { useState, useEffect } from 'react';
 import Link from 'next/link';
-import { FaArrowLeft, FaCalculator, FaAtom, FaFlask, FaGraduationCap, FaShare, FaBookmark, FaClock, FaCalendarAlt, FaTag } from 'react-icons/fa';
+import { FaArrowLeft, FaShare, FaBookmark, FaClock, FaCalendarAlt, FaTag } from 'react-icons/fa';
 
 // This would typically come from a database or CMS
 const blogPosts = {
