@@ -31,6 +31,18 @@ export default function Navigation() {
                 Services
               </Link>
               <Link
+                href="/tutors"
+                className="inline-flex items-center border-b-2 border-transparent px-1 pt-1 text-sm font-medium text-gray-500 hover:border-gray-300 hover:text-gray-700"
+              >
+                Tutors
+              </Link>
+              <Link
+                href="/blog"
+                className="inline-flex items-center border-b-2 border-transparent px-1 pt-1 text-sm font-medium text-gray-500 hover:border-gray-300 hover:text-gray-700"
+              >
+                Blog
+              </Link>
+              <Link
                 href="/faq"
                 className="inline-flex items-center border-b-2 border-transparent px-1 pt-1 text-sm font-medium text-gray-500 hover:border-gray-300 hover:text-gray-700"
               >
@@ -84,6 +96,18 @@ export default function Navigation() {
               className="block border-l-4 border-transparent py-2 pl-3 pr-4 text-base font-medium text-gray-500 hover:border-gray-300 hover:bg-gray-50 hover:text-gray-700"
             >
               Services
+            </Link>
+            <Link
+              href="/tutors"
+              className="block border-l-4 border-transparent py-2 pl-3 pr-4 text-base font-medium text-gray-500 hover:border-gray-300 hover:bg-gray-50 hover:text-gray-700"
+            >
+              Tutors
+            </Link>
+            <Link
+              href="/blog"
+              className="block border-l-4 border-transparent py-2 pl-3 pr-4 text-base font-medium text-gray-500 hover:border-gray-300 hover:bg-gray-50 hover:text-gray-700"
+            >
+              Blog
             </Link>
             <Link
               href="/faq"

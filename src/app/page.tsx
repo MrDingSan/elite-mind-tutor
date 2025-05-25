@@ -1,7 +1,8 @@
 import React from 'react';
 import Link from "next/link";
-import { FaGraduationCap, FaUserTie, FaBook, FaQuoteLeft, FaQuestionCircle } from "react-icons/fa";
+import { FaGraduationCap, FaUserTie, FaBook, FaQuoteLeft, FaQuestionCircle, FaChalkboardTeacher } from "react-icons/fa";
 import Head from 'next/head';
+import Testimonials from '@/components/Testimonials';
 
 export default function Home() {
   return (
@@ -108,6 +109,9 @@ export default function Home() {
           </dl>
         </div>
       </div>
+
+      {/* Testimonials Section */}
+      <Testimonials />
 
       {/* Services, Testimonials, FAQ as cards */}
       <div className="mx-auto max-w-7xl px-6 lg:px-8 pb-24 grid grid-cols-1 md:grid-cols-3 gap-8">
