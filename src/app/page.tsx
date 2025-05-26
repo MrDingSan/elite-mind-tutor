@@ -1,6 +1,6 @@
 import React from 'react';
 import Link from "next/link";
-import { FaGraduationCap, FaUserTie, FaBook, FaQuoteLeft, FaQuestionCircle } from "react-icons/fa";
+import { FaGraduationCap, FaUserTie, FaBook, FaStar, FaQuestionCircle, FaCheckCircle } from "react-icons/fa";
 import Head from 'next/head';
 import Testimonials from '@/components/Testimonials';
 import Image from 'next/image';
@@ -132,7 +132,7 @@ export default function Home() {
       {/* Testimonials Section */}
       <Testimonials />
 
-      {/* Services, Testimonials, FAQ as cards */}
+      {/* Services, Why Choose Us, FAQ as cards */}
       <div className="mx-auto max-w-7xl px-6 lg:px-8 pb-24 grid grid-cols-1 md:grid-cols-3 gap-8">
         {/* Services Card */}
         <div className="bg-white rounded-xl shadow-lg p-8 flex flex-col items-center text-center border-t-4 border-indigo-600">
@@ -145,27 +145,52 @@ export default function Home() {
             <li>Online and In-Person Sessions</li>
           </ul>
         </div>
-        {/* Testimonials Card */}
-        <div className="bg-white rounded-xl shadow-lg p-8 flex flex-col items-center text-center border-t-4 border-pink-400">
-          <FaQuoteLeft className="text-pink-400 text-4xl mb-4" />
-          <h2 className="text-xl font-bold mb-2">Testimonials</h2>
-          <blockquote className="italic mb-2">"Elite Mind Tutor has been a game-changer for my child's education. The tutors are highly qualified and very supportive."</blockquote>
-          <span className="text-sm text-gray-500 mb-4">- Parent</span>
-          <blockquote className="italic mb-2">"I improved my grades significantly thanks to the personalized tutoring sessions."</blockquote>
-          <span className="text-sm text-gray-500">- Student</span>
+        {/* Why Choose Us Card */}
+        <div className="bg-white rounded-xl shadow-lg p-8 flex flex-col items-center text-center border-t-4 border-indigo-600">
+          <FaStar className="text-indigo-600 text-4xl mb-4" />
+          <h2 className="text-xl font-bold mb-4">Why Choose Us</h2>
+          <div className="space-y-4 text-left">
+            <div className="flex items-start gap-3">
+              <FaCheckCircle className="text-indigo-600 mt-1 flex-shrink-0" />
+              <p className="text-gray-600">Expert tutors from top universities</p>
+            </div>
+            <div className="flex items-start gap-3">
+              <FaCheckCircle className="text-indigo-600 mt-1 flex-shrink-0" />
+              <p className="text-gray-600">Proven track record of student success</p>
+            </div>
+            <div className="flex items-start gap-3">
+              <FaCheckCircle className="text-indigo-600 mt-1 flex-shrink-0" />
+              <p className="text-gray-600">Flexible scheduling options</p>
+            </div>
+            <div className="flex items-start gap-3">
+              <FaCheckCircle className="text-indigo-600 mt-1 flex-shrink-0" />
+              <p className="text-gray-600">Comprehensive curriculum coverage</p>
+            </div>
+          </div>
         </div>
-        {/* FAQ Card */}
-        <div className="bg-white rounded-xl shadow-lg p-8 flex flex-col items-center text-center border-t-4 border-green-500">
-          <FaQuestionCircle className="text-green-500 text-4xl mb-4" />
-          <h2 className="text-xl font-bold mb-2">Frequently Asked Questions</h2>
-          <div className="mb-2">
-            <h3 className="font-semibold">What subjects do you offer tutoring for?</h3>
-            <p className="text-sm">We offer tutoring for a wide range of subjects, including IGCSE and IB curriculum subjects.</p>
+        {/* FAQ Preview Card */}
+        <div className="bg-white rounded-xl shadow-lg p-8 flex flex-col items-center text-center border-t-4 border-indigo-600">
+          <FaQuestionCircle className="text-indigo-600 text-4xl mb-4" />
+          <h2 className="text-xl font-bold mb-4">Common Questions</h2>
+          <div className="space-y-4 text-left">
+            <div>
+              <h3 className="font-semibold text-gray-900">What makes your tutoring different?</h3>
+              <p className="text-sm text-gray-600">We focus on personalized learning and conceptual understanding.</p>
+            </div>
+            <div>
+              <h3 className="font-semibold text-gray-900">How do you match students with tutors?</h3>
+              <p className="text-sm text-gray-600">We carefully match based on learning style and academic goals.</p>
+            </div>
           </div>
-          <div>
-            <h3 className="font-semibold">How do I schedule a tutoring session?</h3>
-            <p className="text-sm">You can schedule a tutoring session by contacting us through our website or by phone.</p>
-          </div>
+          <Link 
+            href="/faq" 
+            className="mt-6 text-indigo-600 hover:text-indigo-500 font-semibold flex items-center gap-2"
+          >
+            View all FAQs
+            <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+            </svg>
+          </Link>
         </div>
       </div>
 
