@@ -2,7 +2,7 @@
 
 import React, { useState } from 'react';
 import Link from 'next/link';
-import { FaBook, FaCalculator, FaFlask, FaAtom, FaGraduationCap, FaLightbulb, FaSearch } from 'react-icons/fa';
+import { FaBook, FaCalculator, FaFlask, FaAtom, FaGraduationCap, FaSearch } from 'react-icons/fa';
 
 // Blog post data structure
 interface BlogPost {

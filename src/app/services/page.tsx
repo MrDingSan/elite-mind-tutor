@@ -1,6 +1,8 @@
+"use client";
+
 import React from 'react';
 import Link from 'next/link';
-import { FaGraduationCap, FaBook, FaUsers, FaClock, FaCheckCircle, FaArrowRight } from 'react-icons/fa';
+import { FaBook, FaUsers, FaClock, FaArrowRight } from 'react-icons/fa';
 
 export default function Services() {
   return (
