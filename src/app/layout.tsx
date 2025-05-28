@@ -8,8 +8,57 @@ import Head from 'next/head';
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: "Elite Mind Tutor - Premium Tutoring Services in Singapore",
-  description: "Connect with qualified tutors for IGCSE and IB curriculum in Singapore. Elite Mind Tutor provides premium tutoring services for international school students.",
+  metadataBase: new URL('https://elitemindtutor.com'),
+  title: {
+    default: 'Elite Mind Tutor - Expert IGCSE & IB Tutoring in Singapore',
+    template: '%s | Elite Mind Tutor'
+  },
+  description: 'Expert IGCSE and IB curriculum tutoring in Singapore. Personalized learning plans, qualified tutors, and proven results. Book your session today!',
+  keywords: ['IGCSE tutoring', 'IB tutoring', 'Singapore tutors', 'Math tutoring', 'Science tutoring', 'International school tutoring'],
+  authors: [{ name: 'Elite Mind Tutor' }],
+  creator: 'Elite Mind Tutor',
+  publisher: 'Elite Mind Tutor',
+  formatDetection: {
+    email: false,
+    address: false,
+    telephone: false,
+  },
+  openGraph: {
+    type: 'website',
+    locale: 'en_SG',
+    url: 'https://elitemindtutor.com',
+    siteName: 'Elite Mind Tutor',
+    title: 'Elite Mind Tutor - Expert IGCSE & IB Tutoring in Singapore',
+    description: 'Expert IGCSE and IB curriculum tutoring in Singapore. Personalized learning plans, qualified tutors, and proven results.',
+    images: [
+      {
+        url: '/images/og-image.jpg',
+        width: 1200,
+        height: 630,
+        alt: 'Elite Mind Tutor',
+      },
+    ],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Elite Mind Tutor - Expert IGCSE & IB Tutoring in Singapore',
+    description: 'Expert IGCSE and IB curriculum tutoring in Singapore. Personalized learning plans, qualified tutors, and proven results.',
+    images: ['/images/og-image.jpg'],
+  },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      'max-video-preview': -1,
+      'max-image-preview': 'large',
+      'max-snippet': -1,
+    },
+  },
+  verification: {
+    google: 'your-google-site-verification', // Replace with your Google Search Console verification code
+  },
 };
 
 export default function RootLayout({
