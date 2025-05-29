@@ -1,244 +1,94 @@
 "use client";
 
-import React, { useState } from 'react';
+import React from 'react';
+import Image from 'next/image';
 import Link from 'next/link';
-import { FaBook, FaCalculator, FaFlask, FaAtom, FaGraduationCap, FaSearch } from 'react-icons/fa';
+import { FaCalendarAlt, FaUser, FaArrowRight } from 'react-icons/fa';
 
-// Blog post data structure
-interface BlogPost {
-  id: string;
-  title: string;
-  excerpt: string;
-  category: string;
-  date: string;
-  readTime: string;
-  icon: React.ReactNode;
-  slug: string;
-  featured?: boolean;
-  image?: string;
-}
-
-const blogPosts: BlogPost[] = [
+const blogPosts = [
   {
-    id: '1',
-    title: 'Mastering IB Math HL: A Comprehensive Guide',
-    excerpt: 'Learn essential strategies and tips for excelling in IB Mathematics Higher Level, including key topics and exam preparation techniques.',
-    category: 'Mathematics',
-    date: '2024-03-15',
-    readTime: '8 min read',
-    icon: <FaCalculator className="h-6 w-6 text-indigo-600" />,
-    slug: 'mastering-ib-math-hl',
-    featured: true,
-    image: '/images/blog/math-hl.jpg'
-  },
-  {
-    id: '2',
-    title: 'Understanding IGCSE Physics: Core Concepts Explained',
-    excerpt: 'A detailed breakdown of fundamental physics concepts for IGCSE students, with practical examples and common misconceptions addressed.',
-    category: 'Physics',
-    date: '2024-03-10',
-    readTime: '6 min read',
-    icon: <FaAtom className="h-6 w-6 text-indigo-600" />,
-    slug: 'understanding-igcse-physics',
-    featured: true,
-    image: '/images/blog/physics.jpg'
-  },
-  {
-    id: '3',
-    title: 'Chemistry Lab Skills: Essential Techniques for IB Students',
-    excerpt: 'Master the essential laboratory techniques required for IB Chemistry, including safety protocols and data analysis methods.',
-    category: 'Chemistry',
-    date: '2024-03-05',
-    readTime: '7 min read',
-    icon: <FaFlask className="h-6 w-6 text-indigo-600" />,
-    slug: 'chemistry-lab-skills'
-  },
-  {
-    id: '4',
-    title: 'How to Choose Between IB Math AA and AI',
-    excerpt: 'A comprehensive guide to help students decide between IB Mathematics Analysis and Approaches (AA) and Applications and Interpretation (AI).',
-    category: 'Mathematics',
-    date: '2024-02-28',
-    readTime: '5 min read',
-    icon: <FaCalculator className="h-6 w-6 text-indigo-600" />,
-    slug: 'choosing-ib-math-aa-ai'
-  },
-  {
-    id: '5',
-    title: 'Effective Study Techniques for IGCSE Students',
-    excerpt: 'Discover proven study methods and time management strategies to maximize your IGCSE exam preparation.',
-    category: 'Study Tips',
-    date: '2024-02-20',
-    readTime: '6 min read',
-    icon: <FaGraduationCap className="h-6 w-6 text-indigo-600" />,
-    slug: 'effective-study-techniques'
-  },
-  {
-    id: '6',
-    title: 'Common Mistakes in IB Physics and How to Avoid Them',
-    excerpt: 'Learn about frequent errors students make in IB Physics and practical strategies to prevent them in your exams.',
-    category: 'Physics',
-    date: '2024-02-15',
-    readTime: '5 min read',
-    icon: <FaAtom className="h-6 w-6 text-indigo-600" />,
-    slug: 'common-mistakes-ib-physics'
+    id: 1,
+    title: "The Ultimate Guide to Choosing an International School in Singapore (2025 Edition)",
+    author: "Dr. Kevin",
+    role: "Founder of EliteMind Tutor",
+    date: "March 15, 2024",
+    excerpt: "Singapore is often called the 'education hub of Asia'—and for good reason. With over 50 international schools offering globally recognized curricula such as IB, IGCSE, A-Levels, AP, and more, parents relocating to or living in Singapore are spoiled for choice.",
+    image: "/images/students/classroom1.jpg",
+    slug: "choosing-international-school-singapore-2025"
   }
 ];
 
-const categories = [
-  { name: 'All', icon: <FaBook className="h-5 w-5" /> },
-  { name: 'Mathematics', icon: <FaCalculator className="h-5 w-5" /> },
-  { name: 'Physics', icon: <FaAtom className="h-5 w-5" /> },
-  { name: 'Chemistry', icon: <FaFlask className="h-5 w-5" /> },
-  { name: 'Study Tips', icon: <FaGraduationCap className="h-5 w-5" /> }
-];
-
 export default function Blog() {
-  const [selectedCategory, setSelectedCategory] = useState('All');
-  const [searchQuery, setSearchQuery] = useState('');
-
-  const filteredPosts = blogPosts.filter(post => {
-    const matchesCategory = selectedCategory === 'All' || post.category === selectedCategory;
-    const matchesSearch = post.title.toLowerCase().includes(searchQuery.toLowerCase()) ||
-                         post.excerpt.toLowerCase().includes(searchQuery.toLowerCase());
-    return matchesCategory && matchesSearch;
-  });
-
-  const featuredPosts = filteredPosts.filter(post => post.featured);
-  const regularPosts = filteredPosts.filter(post => !post.featured);
-
   return (
-    <div className="bg-gray-50">
+    <div className="bg-white">
       {/* Hero Section */}
-      <div className="relative bg-indigo-600 py-20">
-        <div className="absolute inset-0 bg-gradient-to-r from-indigo-600 to-purple-600 opacity-90"></div>
-        <div className="relative mx-auto max-w-7xl px-6 lg:px-8">
-          <div className="mx-auto max-w-2xl text-center">
-            <h1 className="text-4xl font-bold tracking-tight text-white sm:text-6xl">
-              Educational Resources
+      <div className="relative h-[40vh] min-h-[300px] overflow-hidden">
+        <div className="absolute inset-0">
+          <Image
+            src="/images/students/classroom2.jpg"
+            alt="Students in classroom"
+            fill
+            className="object-cover"
+            priority
+            quality={100}
+          />
+          <div className="absolute inset-0 bg-gradient-to-r from-indigo-900/90 to-purple-900/90" />
+        </div>
+        <div className="relative h-full flex items-center">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <h1 className="text-4xl sm:text-5xl font-bold text-white mb-4">
+              Education Insights
             </h1>
-            <p className="mt-6 text-lg leading-8 text-indigo-100">
-              Expert insights, study guides, and tips to help you excel in your academic journey
+            <p className="text-xl text-indigo-100 max-w-3xl mx-auto">
+              Expert advice and guidance for your educational journey
             </p>
           </div>
         </div>
       </div>
 
-      {/* Search and Categories */}
-      <div className="mx-auto max-w-7xl px-6 lg:px-8 -mt-8">
-        <div className="bg-white rounded-xl shadow-lg p-6 mb-12">
-          <div className="flex flex-col md:flex-row gap-6">
-            {/* Search Bar */}
-            <div className="flex-1">
-              <div className="relative">
-                <input
-                  type="text"
-                  placeholder="Search articles..."
-                  className="w-full pl-10 pr-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500"
-                  value={searchQuery}
-                  onChange={(e) => setSearchQuery(e.target.value)}
-                />
-                <FaSearch className="absolute left-3 top-3 text-gray-400" />
-              </div>
-            </div>
-            {/* Categories */}
-            <div className="flex flex-wrap gap-2">
-              {categories.map((category) => (
-                <button
-                  key={category.name}
-                  onClick={() => setSelectedCategory(category.name)}
-                  className={`flex items-center gap-2 px-4 py-2 rounded-full transition-colors ${
-                    selectedCategory === category.name
-                      ? 'bg-indigo-600 text-white'
-                      : 'bg-gray-100 text-gray-700 hover:bg-gray-200'
-                  }`}
-                >
-                  {category.icon}
-                  <span>{category.name}</span>
-                </button>
-              ))}
-            </div>
-          </div>
-        </div>
-
-        {/* Featured Posts */}
-        {featuredPosts.length > 0 && (
-          <div className="mb-16">
-            <h2 className="text-2xl font-bold text-gray-900 mb-8">Featured Articles</h2>
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-              {featuredPosts.map((post) => (
-                <Link
-                  key={post.id}
-                  href={`/blog/${post.slug}`}
-                  className="group"
-                >
-                  <article className="bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition-all duration-300">
-                    <div className="aspect-w-16 aspect-h-9 bg-gray-200">
-                      {/* Add actual images later */}
-                      <div className="w-full h-48 bg-gradient-to-r from-indigo-500 to-purple-500"></div>
+      {/* Blog Posts Grid */}
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+        <div className="grid gap-12">
+          {blogPosts.map((post) => (
+            <article key={post.id} className="bg-white rounded-2xl shadow-xl overflow-hidden">
+              <div className="grid md:grid-cols-2 gap-8">
+                <div className="relative h-[400px] md:h-full">
+                  <Image
+                    src={post.image}
+                    alt={post.title}
+                    fill
+                    className="object-cover"
+                    quality={100}
+                  />
+                </div>
+                <div className="p-8 md:p-12">
+                  <div className="flex items-center space-x-4 text-sm text-gray-500 mb-4">
+                    <div className="flex items-center">
+                      <FaCalendarAlt className="mr-2" />
+                      {post.date}
                     </div>
-                    <div className="p-6">
-                      <div className="flex items-center gap-4 mb-4">
-                        {post.icon}
-                        <span className="text-sm font-medium text-indigo-600">{post.category}</span>
-                      </div>
-                      <h3 className="text-xl font-semibold text-gray-900 group-hover:text-indigo-600 mb-2">
-                        {post.title}
-                      </h3>
-                      <p className="text-gray-600 mb-4 line-clamp-2">
-                        {post.excerpt}
-                      </p>
-                      <div className="flex items-center justify-between text-sm text-gray-500">
-                        <span>{new Date(post.date).toLocaleDateString('en-US', { 
-                          year: 'numeric', 
-                          month: 'long', 
-                          day: 'numeric' 
-                        })}</span>
-                        <span>{post.readTime}</span>
-                      </div>
-                    </div>
-                  </article>
-                </Link>
-              ))}
-            </div>
-          </div>
-        )}
-
-        {/* Regular Posts Grid */}
-        <div className="mb-16">
-          <h2 className="text-2xl font-bold text-gray-900 mb-8">Latest Articles</h2>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {regularPosts.map((post) => (
-              <Link
-                key={post.id}
-                href={`/blog/${post.slug}`}
-                className="group"
-              >
-                <article className="bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition-all duration-300">
-                  <div className="p-6">
-                    <div className="flex items-center gap-4 mb-4">
-                      {post.icon}
-                      <span className="text-sm font-medium text-indigo-600">{post.category}</span>
-                    </div>
-                    <h3 className="text-xl font-semibold text-gray-900 group-hover:text-indigo-600 mb-2">
-                      {post.title}
-                    </h3>
-                    <p className="text-gray-600 mb-4 line-clamp-3">
-                      {post.excerpt}
-                    </p>
-                    <div className="flex items-center justify-between text-sm text-gray-500">
-                      <span>{new Date(post.date).toLocaleDateString('en-US', { 
-                        year: 'numeric', 
-                        month: 'long', 
-                        day: 'numeric' 
-                      })}</span>
-                      <span>{post.readTime}</span>
+                    <div className="flex items-center">
+                      <FaUser className="mr-2" />
+                      {post.author}
                     </div>
                   </div>
-                </article>
-              </Link>
-            ))}
-          </div>
+                  <h2 className="text-3xl font-bold text-gray-900 mb-4">
+                    {post.title}
+                  </h2>
+                  <p className="text-lg text-gray-600 mb-6">
+                    {post.excerpt}
+                  </p>
+                  <Link
+                    href={`/blog/${post.slug}`}
+                    className="inline-flex items-center text-indigo-600 hover:text-indigo-800 font-semibold group"
+                  >
+                    Read More
+                    <FaArrowRight className="ml-2 group-hover:translate-x-1 transition-transform" />
+                  </Link>
+                </div>
+              </div>
+            </article>
+          ))}
         </div>
       </div>
     </div>
