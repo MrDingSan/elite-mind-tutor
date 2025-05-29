@@ -1,7 +1,7 @@
 "use client";
 
 import React from 'react';
-import { FaGraduationCap, FaLightbulb, FaChartLine, FaUsers, FaBook, FaAward, FaStar, FaCheckCircle } from 'react-icons/fa';
+import { FaGraduationCap, FaLightbulb, FaChartLine, FaUsers, FaBook, FaAward, FaCheckCircle } from 'react-icons/fa';
 import Image from 'next/image';
 
 const teachingMethods = [
