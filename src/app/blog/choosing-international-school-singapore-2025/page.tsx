@@ -3,7 +3,7 @@
 import React from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
-import { FaCalendarAlt, FaUser, FaArrowLeft, FaCheckCircle } from 'react-icons/fa';
+import { FaCalendarAlt, FaUser, FaCheckCircle } from 'react-icons/fa';
 
 export default function BlogPost() {
   return (
