@@ -27,7 +27,7 @@ export default function BlogPost() {
               <div className="flex items-center space-x-4 text-sm text-indigo-100 mb-4">
                 <div className="flex items-center">
                   <FaCalendarAlt className="mr-2" />
-                  March 15, 2024
+                  May 29, 2025
                 </div>
                 <div className="flex items-center">
                   <FaUser className="mr-2" />
