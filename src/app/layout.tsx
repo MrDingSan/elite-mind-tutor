@@ -64,9 +64,9 @@ export const metadata: Metadata = {
 
 export default function RootLayout({
   children,
-}: Readonly<{
+}: {
   children: React.ReactNode;
-}>) {
+}) {
   return (
     <html lang="en" className="h-full">
       <Head>
@@ -79,11 +79,13 @@ export default function RootLayout({
         inter.className,
         "min-h-full bg-white"
       )}>
-        <Navigation />
-        <main className="flex-grow">
-          {children}
-        </main>
-        <WhatsAppButton />
+        <div className="flex flex-col min-h-screen">
+          <Navigation />
+          <main className="flex-grow">
+            {children}
+          </main>
+          <WhatsAppButton />
+        </div>
       </body>
     </html>
   );
