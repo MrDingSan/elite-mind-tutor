@@ -1,6 +1,6 @@
 import React from 'react';
 import Link from "next/link";
-import { FaGraduationCap, FaUserTie, FaBook, FaStar, FaQuestionCircle, FaCheckCircle, FaUsers, FaGlobe, FaWhatsapp, FaChalkboardTeacher, FaAward, FaUserGraduate } from "react-icons/fa";
+import { FaGraduationCap, FaBook, FaStar, FaQuestionCircle, FaWhatsapp, FaChalkboardTeacher, FaAward } from "react-icons/fa";
 import Head from 'next/head';
 import Testimonials from '@/components/Testimonials';
 import Image from 'next/image';
