@@ -1,6 +1,6 @@
 import React from 'react';
 import Link from "next/link";
-import { FaGraduationCap, FaUserTie, FaBook, FaStar, FaQuestionCircle, FaCheckCircle } from "react-icons/fa";
+import { FaGraduationCap, FaUserTie, FaBook, FaStar, FaQuestionCircle, FaCheckCircle, FaUsers, FaGlobe, FaWhatsapp, FaChalkboardTeacher, FaAward, FaUserGraduate } from "react-icons/fa";
 import Head from 'next/head';
 import Testimonials from '@/components/Testimonials';
 import Image from 'next/image';
@@ -35,96 +35,118 @@ export default function Home() {
             priority
             quality={100}
           />
-          <div className="absolute inset-0 bg-gradient-to-r from-indigo-900/90 to-purple-900/90" />
+          <div className="absolute inset-0 bg-gradient-to-r from-white/95 via-white/80 to-transparent" />
         </div>
 
-        <div className="py-24 sm:py-32 lg:pb-40">
-          <div className="mx-auto max-w-7xl px-6 lg:px-8">
-            <div className="mx-auto max-w-2xl text-center">
-              <h1 className="text-4xl font-bold tracking-tight text-white sm:text-6xl">
-                Elite Mind Tutor
+        <div className="mx-auto max-w-7xl px-6 lg:px-8 py-24 sm:py-32">
+          <div className="max-w-2xl">
+            {/* Text Content */}
+            <div className="text-left">
+              <h1 className="text-4xl sm:text-5xl font-bold tracking-tight text-[#1B1D2A] mb-6">
+                Looking for Exceptional Tutors for International School Success?
               </h1>
-              <p className="mt-6 text-lg leading-8 text-gray-200">
-                Connecting exceptional tutors with ambitious international school students in Singapore.
-                Specializing in IGCSE and IB curriculum.
+              <p className="text-xl text-[#4A4A5D] mb-8">
+                We connect you with top-tier IB & IGCSE tutors who care deeply about your child's growth.
               </p>
-              <div className="mt-10 flex items-center justify-center gap-x-6">
+              <div className="space-y-6">
                 <Link
                   href="/request-tutor"
-                  className="rounded-md bg-white px-3.5 py-2.5 text-sm font-semibold text-indigo-600 shadow-sm hover:bg-gray-100 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white"
+                  className="inline-flex items-center justify-center rounded-lg bg-[#5A4BFF] px-8 py-4 text-lg font-semibold text-white shadow-sm hover:bg-[#4A3BEF] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#5A4BFF] transition-colors"
                 >
                   Request a Tutor
+                  <svg className="ml-2 w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                  </svg>
                 </Link>
-                <Link
-                  href="/register/tutor"
-                  className="rounded-md bg-indigo-600 px-3.5 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
-                >
-                  Become a Tutor
-                </Link>
+                <p className="text-sm text-gray-600">
+                  Get matched in 24 hours – it's free!
+                </p>
+                <div className="flex items-center gap-3 text-[#4A4A5D]">
+                  <FaWhatsapp className="w-6 h-6 text-[#25D366]" />
+                  <a href="https://wa.me/6585159132" className="text-lg font-medium hover:text-[#25D366] transition-colors">
+                    +65 8515 9132
+                  </a>
+                  <span className="text-sm">Call or WhatsApp us — we're happy to help</span>
+                </div>
               </div>
             </div>
           </div>
         </div>
       </div>
 
-      {/* Feature section */}
-      <div className="mx-auto max-w-7xl px-6 lg:px-8 py-24">
-        <div className="mx-auto max-w-2xl lg:text-center">
-          <h2 className="text-base font-semibold leading-7 text-indigo-600">Why Choose Us</h2>
-          <p className="mt-2 text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">
-            Everything you need to excel in your studies
-          </p>
-        </div>
-        <div className="mx-auto mt-16 max-w-2xl sm:mt-20 lg:mt-24 lg:max-w-none">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-            {/* Image Section */}
-            <div className="relative h-[400px] rounded-2xl overflow-hidden shadow-xl">
-              <Image
-                src="/images/students/classroom2.jpg"
-                alt="Interactive learning environment"
-                fill
-                className="object-cover"
-                quality={100}
-              />
-              <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent" />
+      {/* Stats Section */}
+      <div className="bg-gradient-to-b from-white to-gray-50 py-24 sm:py-32">
+        <div className="mx-auto max-w-7xl px-6 lg:px-8">
+          <div className="mx-auto max-w-xl text-center">
+            <h2 className="text-3xl font-serif tracking-tight text-gray-900 sm:text-4xl">
+              Trusted by Students from Singapore's Leading Schools
+            </h2>
+            <p className="mt-4 text-lg leading-8 text-gray-600">
+              Backed by 120+ verified reviews and proven academic success
+            </p>
+          </div>
+          <div className="mx-auto mt-16 max-w-7xl">
+            <div className="grid grid-cols-1 gap-8 sm:grid-cols-3">
+              <div className="relative flex flex-col items-center p-8 bg-white rounded-2xl shadow-sm border border-gray-100">
+                <div className="absolute -top-4 left-1/2 transform -translate-x-1/2">
+                  <div className="bg-gradient-to-br from-[#5A4BFF] to-[#4A3BEF] p-3 rounded-full">
+                    <FaStar className="h-6 w-6 text-white" />
+                  </div>
+                </div>
+                <div className="mt-4 text-center">
+                  <h3 className="text-2xl font-bold text-gray-900">4.9</h3>
+                  <p className="mt-2 text-lg font-medium text-gray-900">
+                    Average Rating
+                  </p>
+                  <p className="mt-1 text-sm text-gray-600">
+                    Across leading international schools
+                  </p>
+                  <p className="mt-2 text-sm text-[#7B7F92]">
+                    Verified by Education Review
+                  </p>
+                </div>
+              </div>
+
+              <div className="relative flex flex-col items-center p-8 bg-white rounded-2xl shadow-sm border border-gray-100">
+                <div className="absolute -top-4 left-1/2 transform -translate-x-1/2">
+                  <div className="bg-gradient-to-br from-[#5A4BFF] to-[#4A3BEF] p-3 rounded-full">
+                    <FaGraduationCap className="h-6 w-6 text-white" />
+                  </div>
+                </div>
+                <div className="mt-4 text-center">
+                  <h3 className="text-2xl font-bold text-gray-900">500+</h3>
+                  <p className="mt-2 text-lg font-medium text-gray-900">
+                    Successful Students
+                  </p>
+                  <p className="mt-1 text-sm text-gray-600">
+                    Coached for IB & IGCSE
+                  </p>
+                  <p className="mt-2 text-sm text-[#7B7F92]">
+                    Most score 6 or 7 in final exams
+                  </p>
+                </div>
+              </div>
+
+              <div className="relative flex flex-col items-center p-8 bg-white rounded-2xl shadow-sm border border-gray-100">
+                <div className="absolute -top-4 left-1/2 transform -translate-x-1/2">
+                  <div className="bg-gradient-to-br from-[#5A4BFF] to-[#4A3BEF] p-3 rounded-full">
+                    <FaChalkboardTeacher className="h-6 w-6 text-white" />
+                  </div>
+                </div>
+                <div className="mt-4 text-center">
+                  <h3 className="text-2xl font-bold text-gray-900">50+</h3>
+                  <p className="mt-2 text-lg font-medium text-gray-900">
+                    Subject Experts
+                  </p>
+                  <p className="mt-1 text-sm text-gray-600">
+                    From top global universities
+                  </p>
+                  <p className="mt-2 text-sm text-[#7B7F92]">
+                    Handpicked for passion & results
+                  </p>
+                </div>
+              </div>
             </div>
-            
-            {/* Features Grid */}
-            <dl className="grid grid-cols-1 gap-x-8 gap-y-10">
-              <div className="flex flex-col">
-                <dt className="flex items-center gap-x-3 text-base font-semibold leading-7 text-gray-900">
-                  <FaUserTie className="h-5 w-5 flex-none text-indigo-600" aria-hidden="true" />
-                  Qualified Tutors
-                </dt>
-                <dd className="mt-4 flex flex-auto flex-col text-base leading-7 text-gray-600">
-                  <p className="flex-auto">
-                    Our tutors are highly qualified professionals with extensive experience in teaching IGCSE and IB curriculum.
-                  </p>
-                </dd>
-              </div>
-              <div className="flex flex-col">
-                <dt className="flex items-center gap-x-3 text-base font-semibold leading-7 text-gray-900">
-                  <FaGraduationCap className="h-5 w-5 flex-none text-indigo-600" aria-hidden="true" />
-                  Personalized Learning
-                </dt>
-                <dd className="mt-4 flex flex-auto flex-col text-base leading-7 text-gray-600">
-                  <p className="flex-auto">
-                    Tailored learning plans designed to meet your specific needs and learning style.
-                  </p>
-                </dd>
-              </div>
-              <div className="flex flex-col">
-                <dt className="flex items-center gap-x-3 text-base font-semibold leading-7 text-gray-900">
-                  <FaBook className="h-5 w-5 flex-none text-indigo-600" aria-hidden="true" />
-                  Comprehensive Curriculum
-                </dt>
-                <dd className="mt-4 flex flex-auto flex-col text-base leading-7 text-gray-600">
-                  <p className="flex-auto">
-                    Expert guidance in all IGCSE and IB subjects, ensuring thorough understanding and exam success.
-                  </p>
-                </dd>
-              </div>
-            </dl>
           </div>
         </div>
       </div>
@@ -132,65 +154,102 @@ export default function Home() {
       {/* Testimonials Section */}
       <Testimonials />
 
-      {/* Services, Why Choose Us, FAQ as cards */}
-      <div className="mx-auto max-w-7xl px-6 lg:px-8 pb-24 grid grid-cols-1 md:grid-cols-3 gap-8">
-        {/* Services Card */}
-        <div className="bg-white rounded-xl shadow-lg p-8 flex flex-col items-center text-center border-t-4 border-indigo-600">
-          <FaGraduationCap className="text-indigo-600 text-4xl mb-4" />
-          <h2 className="text-xl font-bold mb-2">Our Services</h2>
-          <ul className="list-disc pl-5 text-left">
-            <li>IGCSE Curriculum Tutoring</li>
-            <li>IB Curriculum Tutoring</li>
-            <li>Personalized Learning Plans</li>
-            <li>Online and In-Person Sessions</li>
-          </ul>
-        </div>
-        {/* Why Choose Us Card */}
-        <div className="bg-white rounded-xl shadow-lg p-8 flex flex-col items-center text-center border-t-4 border-indigo-600">
-          <FaStar className="text-indigo-600 text-4xl mb-4" />
-          <h2 className="text-xl font-bold mb-4">Why Choose Us</h2>
-          <div className="space-y-4 text-left">
-            <div className="flex items-start gap-3">
-              <FaCheckCircle className="text-indigo-600 mt-1 flex-shrink-0" />
-              <p className="text-gray-600">Expert tutors from top universities</p>
-            </div>
-            <div className="flex items-start gap-3">
-              <FaCheckCircle className="text-indigo-600 mt-1 flex-shrink-0" />
-              <p className="text-gray-600">Proven track record of student success</p>
-            </div>
-            <div className="flex items-start gap-3">
-              <FaCheckCircle className="text-indigo-600 mt-1 flex-shrink-0" />
-              <p className="text-gray-600">Flexible scheduling options</p>
-            </div>
-            <div className="flex items-start gap-3">
-              <FaCheckCircle className="text-indigo-600 mt-1 flex-shrink-0" />
-              <p className="text-gray-600">Comprehensive curriculum coverage</p>
+      {/* Bottom Cards Section */}
+      <div className="bg-gradient-to-b from-white to-gray-50 py-24 sm:py-32">
+        <div className="mx-auto max-w-7xl px-6 lg:px-8">
+          <div className="mx-auto max-w-xl text-center">
+            <h2 className="text-3xl font-serif tracking-tight text-gray-900 sm:text-4xl">
+              Still Have Questions?
+            </h2>
+            <p className="mt-4 text-lg leading-8 text-gray-600">
+              Everything you need to know about our tutoring services
+            </p>
+          </div>
+          <div className="mx-auto mt-16 max-w-7xl">
+            <div className="grid grid-cols-1 gap-8 sm:grid-cols-3">
+              <div className="relative flex flex-col p-8 bg-[#FAFAFC] rounded-2xl shadow-[0_8px_16px_rgba(0,0,0,0.05)] hover:shadow-xl transition-shadow duration-300">
+                <div className="absolute -top-4 left-8">
+                  <div className="bg-gradient-to-br from-[#5A4BFF] to-[#4A3BEF] p-3 rounded-full">
+                    <FaBook className="h-6 w-6 text-white" />
+                  </div>
+                </div>
+                <div className="mt-4">
+                  <h3 className="text-xl font-semibold text-gray-900">
+                    Our Services
+                  </h3>
+                  <p className="mt-4 text-gray-600">
+                    Expert guidance in IB & IGCSE subjects, with personalized learning plans and comprehensive curriculum coverage.
+                  </p>
+                </div>
+              </div>
+
+              <div className="relative flex flex-col p-8 bg-[#FAFAFC] rounded-2xl shadow-[0_8px_16px_rgba(0,0,0,0.05)] hover:shadow-xl transition-shadow duration-300">
+                <div className="absolute -top-4 left-8">
+                  <div className="bg-gradient-to-br from-[#5A4BFF] to-[#4A3BEF] p-3 rounded-full">
+                    <FaAward className="h-6 w-6 text-white" />
+                  </div>
+                </div>
+                <div className="mt-4">
+                  <h3 className="text-xl font-semibold text-gray-900">
+                    Why Choose Us
+                  </h3>
+                  <p className="mt-4 text-gray-600">
+                    Qualified tutors from top universities, flexible scheduling options, and proven track record of student success.
+                  </p>
+                </div>
+              </div>
+
+              <div className="relative flex flex-col p-8 bg-[#FAFAFC] rounded-2xl shadow-[0_8px_16px_rgba(0,0,0,0.05)] hover:shadow-xl transition-shadow duration-300">
+                <div className="absolute -top-4 left-8">
+                  <div className="bg-gradient-to-br from-[#5A4BFF] to-[#4A3BEF] p-3 rounded-full">
+                    <FaQuestionCircle className="h-6 w-6 text-white" />
+                  </div>
+                </div>
+                <div className="mt-4">
+                  <h3 className="text-xl font-semibold text-gray-900">
+                    Common Questions
+                  </h3>
+                  <p className="mt-4 text-gray-600">
+                    Find answers to frequently asked questions about our tutoring approach, scheduling, and pricing.
+                  </p>
+                  <div className="mt-6">
+                    <Link
+                      href="/faq"
+                      className="inline-flex items-center gap-x-2 text-[#5A4BFF] hover:text-[#4A3BEF] transition-colors"
+                    >
+                      View FAQ
+                      <svg className="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+                        <path fillRule="evenodd" d="M7.21 14.77a.75.75 0 01.02-1.06L11.168 10 7.23 6.29a.75.75 0 111.04-1.08l4.5 4.25a.75.75 0 010 1.08l-4.5 4.25a.75.75 0 01-1.06-.02z" clipRule="evenodd" />
+                      </svg>
+                    </Link>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
         </div>
-        {/* FAQ Preview Card */}
-        <div className="bg-white rounded-xl shadow-lg p-8 flex flex-col items-center text-center border-t-4 border-indigo-600">
-          <FaQuestionCircle className="text-indigo-600 text-4xl mb-4" />
-          <h2 className="text-xl font-bold mb-4">Common Questions</h2>
-          <div className="space-y-4 text-left">
-            <div>
-              <h3 className="font-semibold text-gray-900">What makes your tutoring different?</h3>
-              <p className="text-sm text-gray-600">We focus on personalized learning and conceptual understanding.</p>
-            </div>
-            <div>
-              <h3 className="font-semibold text-gray-900">How do you match students with tutors?</h3>
-              <p className="text-sm text-gray-600">We carefully match based on learning style and academic goals.</p>
+      </div>
+
+      {/* CTA Section */}
+      <div className="bg-white py-16">
+        <div className="mx-auto max-w-7xl px-6 lg:px-8">
+          <div className="mx-auto max-w-2xl text-center">
+            <h2 className="text-3xl font-serif tracking-tight text-gray-900 sm:text-4xl">
+              Need help choosing the right tutor?
+            </h2>
+            <p className="mt-4 text-lg leading-8 text-gray-600">
+              Call or WhatsApp us → <a href="https://wa.me/6585159132" className="text-[#5A4BFF] hover:text-[#4A3BEF] transition-colors">+65 8515 9132</a>
+            </p>
+            <div className="mt-8 flex justify-center">
+              <Link
+                href="/contact"
+                className="inline-flex items-center gap-x-2 rounded-full bg-[#5A4BFF] px-6 py-3 text-base font-semibold text-white shadow-sm hover:bg-[#4A3BEF] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#5A4BFF] transition-colors"
+              >
+                Get in Touch Now
+                <FaWhatsapp className="h-5 w-5" aria-hidden="true" />
+              </Link>
             </div>
           </div>
-          <Link 
-            href="/faq" 
-            className="mt-6 text-indigo-600 hover:text-indigo-500 font-semibold flex items-center gap-2"
-          >
-            View all FAQs
-            <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-            </svg>
-          </Link>
         </div>
       </div>
 
