@@ -1,8 +1,9 @@
 "use client";
 
 import React from 'react';
-import { FaGraduationCap, FaLightbulb, FaChartLine, FaUsers, FaBook, FaAward, FaCheckCircle } from 'react-icons/fa';
+import { FaGraduationCap, FaLightbulb, FaChartLine, FaUsers, FaBook, FaAward, FaCheckCircle, FaClock, FaChartBar, FaHandshake } from 'react-icons/fa';
 import Image from 'next/image';
+import Link from 'next/link';
 
 const teachingMethods = [
   {
@@ -56,247 +57,211 @@ const keyFeatures = [
 
 export default function About() {
   return (
-    <div className="bg-white">
-      {/* Hero Section with Parallax */}
-      <div className="relative h-[60vh] min-h-[500px] overflow-hidden">
-        <div className="absolute inset-0">
-          <Image
-            src="/images/students/classroom1.jpg"
-            alt="Students in classroom"
-            fill
-            className="object-cover"
-            priority
-            quality={100}
-          />
-          <div className="absolute inset-0 bg-gradient-to-r from-indigo-900/90 to-purple-900/90" />
-        </div>
-        <div className="relative h-full flex items-center">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-            <h1 className="text-4xl font-bold tracking-tight text-gray-900 sm:text-6xl">
-              About EliteMind Tutor
-            </h1>
-            <p className="mt-6 text-lg leading-8 text-gray-600">
-              At EliteMind Tutor, we are dedicated to transforming the learning experience for every student. Our mission is to ignite a passion for learning while providing the highest quality education that empowers students to achieve their full potential.
-            </p>
-          </div>
-        </div>
-      </div>
-
-      {/* Mission and Vision */}
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
-        <div className="grid md:grid-cols-2 gap-12 items-center">
-          <div className="relative h-[400px] rounded-2xl overflow-hidden shadow-xl">
-            <Image
-              src="/images/students/study1.jpg"
-              alt="Student studying"
-              fill
-              className="object-cover"
-              quality={100}
-            />
-          </div>
-          <div className="space-y-8">
-            <div>
-              <h2 className="text-3xl font-bold text-gray-900 mb-4">Our Mission</h2>
-              <p className="text-lg text-gray-600 leading-relaxed">
-                At EliteMind, we are dedicated to transforming the learning experience for every student. Our mission is to ignite a passion for learning while providing the highest quality education that empowers students to achieve their full potential.
-              </p>
-            </div>
-            <div>
-              <h2 className="text-3xl font-bold text-gray-900 mb-4">Our Vision</h2>
-              <p className="text-lg text-gray-600 leading-relaxed">
-                We envision a world where every student has access to personalized education that fosters growth and success. Through our innovative teaching methods and dedicated approach, we aim to inspire a lifelong love for learning.
-              </p>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      {/* Key Features with Image Background */}
-      <div className="relative py-20">
+    <div className="min-h-screen bg-white">
+      {/* Hero Section */}
+      <div className="relative bg-navy">
         <div className="absolute inset-0">
           <Image
             src="/images/students/classroom2.jpg"
-            alt="Classroom background"
+            alt="Students learning"
             fill
-            className="object-cover"
-            quality={100}
+            className="object-cover opacity-20"
+            priority
           />
-          <div className="absolute inset-0 bg-indigo-900/95" />
+          <div className="absolute inset-0 bg-gradient-to-r from-navy/90 to-navy/70" />
         </div>
-        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-12">
-            <h2 className="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">
-              Why Choose EliteMind Tutor?
-            </h2>
-            <p className="text-xl text-indigo-100 max-w-3xl mx-auto">
-              Experience the difference of our comprehensive approach to education
+        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24 md:py-32">
+          <div className="text-center">
+            <h1 className="text-4xl md:text-5xl font-bold text-white mb-6">
+              About EliteMind Tutor
+            </h1>
+            <p className="text-xl text-white/90 max-w-3xl mx-auto">
+              Transforming education through personalized learning experiences
             </p>
           </div>
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {keyFeatures.map((feature, index) => (
-              <div
-                key={index}
-                className="bg-white/10 backdrop-blur-sm rounded-xl p-6 hover:bg-white/20 transition-colors duration-300 flex items-start space-x-4"
-              >
-                <FaCheckCircle className="h-6 w-6 text-navy-300 flex-shrink-0 mt-1" />
-                <p className="text-lg text-white">{feature}</p>
-              </div>
-            ))}
+        </div>
+      </div>
+
+      {/* Mission Section */}
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 md:py-24">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+          <div className="relative h-[400px] rounded-2xl overflow-hidden shadow-lg">
+            <Image
+              src="/images/students/study3.jpg"
+              alt="Students in classroom"
+              fill
+              className="object-cover"
+            />
+          </div>
+          <div className="max-w-xl">
+            <h2 className="text-3xl font-bold text-gray-900 mb-6">Our Mission</h2>
+            <p className="text-lg text-gray-600 leading-relaxed">
+              At EliteMind Tutor, we are dedicated to transforming the learning experience for every student. 
+              Our mission is to ignite a passion for learning while providing the highest quality education 
+              that empowers students to achieve their full potential.
+            </p>
           </div>
         </div>
       </div>
 
-      {/* Teaching Methods */}
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
-        <div className="text-center mb-12">
-          <h2 className="text-3xl font-bold text-gray-900 mb-4">
-            Our Teaching Methods
-          </h2>
-          <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-            We employ innovative teaching methods designed to engage students and foster a love for learning
-          </p>
-        </div>
-        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
-          {teachingMethods.map((method, index) => (
-            <div
-              key={index}
-              className="bg-white rounded-xl p-6 shadow-lg hover:shadow-xl transition-shadow duration-300 border border-gray-100"
-            >
-              <div className="mb-4">{method.icon}</div>
-              <h3 className="text-xl font-semibold text-gray-900 mb-3">
-                {method.title}
-              </h3>
-              <p className="text-gray-600">
-                {method.description}
-              </p>
-            </div>
-          ))}
-        </div>
-      </div>
-
-      {/* Expertise with Image Grid */}
-      <div className="bg-gray-50 py-20">
+      {/* Teaching Methods Section */}
+      <div className="bg-gray-50 py-16 md:py-24">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-12">
-            <h2 className="text-3xl font-bold text-gray-900 mb-4">
-              Our Expertise
-            </h2>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              Backed by years of experience and proven results
+          <div className="text-center mb-16">
+            <h2 className="text-3xl font-bold text-gray-900 mb-6">Our Teaching Methods</h2>
+            <p className="text-lg text-gray-600 max-w-3xl mx-auto">
+              We combine proven teaching methodologies with innovative approaches to create an engaging and effective learning environment.
             </p>
           </div>
-          <div className="grid md:grid-cols-3 gap-8">
-            {expertise.map((item, index) => (
-              <div
-                key={index}
-                className="bg-white rounded-xl p-8 shadow-lg hover:shadow-xl transition-shadow duration-300"
-              >
-                <div className="mb-4">{item.icon}</div>
-                <h3 className="text-xl font-semibold text-gray-900 mb-3">
-                  {item.title}
-                </h3>
-                <p className="text-gray-600">
-                  {item.description}
-                </p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </div>
-
-      {/* Team Section with Image Grid */}
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
-        <div className="text-center mb-12">
-          <h2 className="text-3xl font-bold text-gray-900 mb-4">
-            Our Team
-          </h2>
-          <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-            Meet our team of dedicated educators committed to your success
-          </p>
-        </div>
-        <div className="grid md:grid-cols-2 gap-12">
-          <div className="space-y-6">
-            <p className="text-lg text-gray-600 leading-relaxed">
-              Our team consists of highly qualified tutors with extensive experience in teaching IGCSE and IB curriculum. Each tutor brings their unique expertise and passion for teaching to create an engaging learning environment.
-            </p>
-            <p className="text-lg text-gray-600 leading-relaxed">
-              We carefully select our tutors based on their academic achievements, teaching experience, and ability to connect with students. Our rigorous selection process ensures that we maintain the highest standards of education.
-            </p>
-            <div className="grid grid-cols-3 gap-4">
-              <div className="relative h-32 rounded-lg overflow-hidden">
-                <Image
-                  src="/images/students/study2.jpg"
-                  alt="Student studying"
-                  fill
-                  className="object-cover"
-                />
-              </div>
-              <div className="relative h-32 rounded-lg overflow-hidden">
-                <Image
-                  src="/images/students/study3.jpg"
-                  alt="Student studying"
-                  fill
-                  className="object-cover"
-                />
-              </div>
-              <div className="relative h-32 rounded-lg overflow-hidden">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <div className="bg-white p-8 rounded-xl shadow-sm">
+              <div className="relative h-48 mb-6 rounded-lg overflow-hidden">
                 <Image
                   src="/images/students/study4.jpg"
-                  alt="Student studying"
+                  alt="Personalized Learning"
                   fill
                   className="object-cover"
                 />
               </div>
+              <div className="w-12 h-12 bg-navy/10 rounded-lg flex items-center justify-center mb-6">
+                <FaLightbulb className="h-6 w-6 text-navy" />
+              </div>
+              <h3 className="text-xl font-semibold text-gray-900 mb-4">Personalized Learning</h3>
+              <p className="text-gray-600">
+                Tailored teaching approaches that adapt to each student's unique learning style and pace.
+              </p>
+            </div>
+            <div className="bg-white p-8 rounded-xl shadow-sm">
+              <div className="relative h-48 mb-6 rounded-lg overflow-hidden">
+                <Image
+                  src="/images/students/tutoring1.jpg"
+                  alt="Progress Tracking"
+                  fill
+                  className="object-cover"
+                />
+              </div>
+              <div className="w-12 h-12 bg-navy/10 rounded-lg flex items-center justify-center mb-6">
+                <FaChartLine className="h-6 w-6 text-navy" />
+              </div>
+              <h3 className="text-xl font-semibold text-gray-900 mb-4">Progress Tracking</h3>
+              <p className="text-gray-600">
+                Regular assessments and detailed progress reports to ensure continuous improvement.
+              </p>
+            </div>
+            <div className="bg-white p-8 rounded-xl shadow-sm">
+              <div className="relative h-48 mb-6 rounded-lg overflow-hidden">
+                <Image
+                  src="/images/students/group_study1.jpg"
+                  alt="Curriculum"
+                  fill
+                  className="object-cover"
+                />
+              </div>
+              <div className="w-12 h-12 bg-navy/10 rounded-lg flex items-center justify-center mb-6">
+                <FaBook className="h-6 w-6 text-navy" />
+              </div>
+              <h3 className="text-xl font-semibold text-gray-900 mb-4">Comprehensive Curriculum</h3>
+              <p className="text-gray-600">
+                Well-structured lessons covering all aspects of the syllabus with practical applications.
+              </p>
             </div>
           </div>
-          <div className="grid grid-cols-2 gap-4">
-            <div className="relative h-64 rounded-lg overflow-hidden">
+        </div>
+      </div>
+
+      {/* Why Choose Us Section */}
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 md:py-24">
+        <div className="text-center mb-16">
+          <h2 className="text-3xl font-bold text-gray-900 mb-6">Why Choose EliteMind Tutor?</h2>
+          <p className="text-lg text-gray-600 max-w-3xl mx-auto">
+            We stand out through our commitment to excellence and student success.
+          </p>
+        </div>
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+          <div className="text-center">
+            <div className="relative h-48 mb-6 rounded-lg overflow-hidden">
               <Image
-                src="/images/students/group_study1.jpg"
-                alt="Group study session"
+                src="/images/students/classroom3.jpg"
+                alt="Expert Tutors"
                 fill
                 className="object-cover"
               />
             </div>
-            <div className="relative h-64 rounded-lg overflow-hidden">
+            <div className="w-16 h-16 bg-navy/10 rounded-full flex items-center justify-center mx-auto mb-6">
+              <FaUsers className="h-8 w-8 text-navy" />
+            </div>
+            <h3 className="text-xl font-semibold text-gray-900 mb-4">Expert Tutors</h3>
+            <p className="text-gray-600">
+              Highly qualified and experienced tutors dedicated to student success.
+            </p>
+          </div>
+          <div className="text-center">
+            <div className="relative h-48 mb-6 rounded-lg overflow-hidden">
               <Image
-                src="/images/students/tutoring1.jpg"
-                alt="One-on-one tutoring"
+                src="/images/students/classroom4.jpg"
+                alt="Flexible Scheduling"
                 fill
                 className="object-cover"
               />
             </div>
+            <div className="w-16 h-16 bg-navy/10 rounded-full flex items-center justify-center mx-auto mb-6">
+              <FaClock className="h-8 w-8 text-navy" />
+            </div>
+            <h3 className="text-xl font-semibold text-gray-900 mb-4">Flexible Scheduling</h3>
+            <p className="text-gray-600">
+              Convenient timing options to fit your busy schedule.
+            </p>
+          </div>
+          <div className="text-center">
+            <div className="relative h-48 mb-6 rounded-lg overflow-hidden">
+              <Image
+                src="/images/students/book1.jpg"
+                alt="Proven Results"
+                fill
+                className="object-cover"
+              />
+            </div>
+            <div className="w-16 h-16 bg-navy/10 rounded-full flex items-center justify-center mx-auto mb-6">
+              <FaChartBar className="h-8 w-8 text-navy" />
+            </div>
+            <h3 className="text-xl font-semibold text-gray-900 mb-4">Proven Results</h3>
+            <p className="text-gray-600">
+              Track record of significant improvement in student performance.
+            </p>
+          </div>
+          <div className="text-center">
+            <div className="relative h-48 mb-6 rounded-lg overflow-hidden">
+              <Image
+                src="/images/students/study1.jpg"
+                alt="Personalized Support"
+                fill
+                className="object-cover"
+              />
+            </div>
+            <div className="w-16 h-16 bg-navy/10 rounded-full flex items-center justify-center mx-auto mb-6">
+              <FaHandshake className="h-8 w-8 text-navy" />
+            </div>
+            <h3 className="text-xl font-semibold text-gray-900 mb-4">Personalized Support</h3>
+            <p className="text-gray-600">
+              Individual attention and customized learning plans for each student.
+            </p>
           </div>
         </div>
       </div>
 
       {/* CTA Section */}
-      <div className="relative py-20">
-        <div className="absolute inset-0">
-          <Image
-            src="/images/students/classroom3.jpg"
-            alt="Classroom background"
-            fill
-            className="object-cover"
-            quality={100}
-          />
-          <div className="absolute inset-0 bg-gradient-to-r from-indigo-900/90 to-purple-900/90" />
-        </div>
-        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center">
-            <h2 className="text-3xl font-bold text-white mb-4">
-              Ready to Start Your Learning Journey?
-            </h2>
-            <p className="text-xl text-indigo-100 mb-8 max-w-2xl mx-auto">
-              Join us and experience the difference of personalized, engaging education
-            </p>
-            <a
-              href="/contact"
-              className="inline-block bg-white text-indigo-600 px-8 py-4 rounded-lg text-lg font-semibold hover:bg-indigo-50 transition-colors transform hover:scale-105 duration-300 shadow-lg hover:shadow-xl"
-            >
-              Contact Us Today
-            </a>
-          </div>
+      <div className="bg-navy py-16 md:py-24">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+          <h2 className="text-3xl font-bold text-white mb-6">Ready to Start Your Learning Journey?</h2>
+          <p className="text-xl text-white/90 mb-8 max-w-3xl mx-auto">
+            Join EliteMind Tutor today and experience the difference in your academic performance.
+          </p>
+          <Link
+            href="/request-tutor"
+            className="inline-block bg-white text-navy px-8 py-4 rounded-lg font-medium hover:bg-gray-100 transition-colors duration-200"
+          >
+            Request a Tutor
+          </Link>
         </div>
       </div>
     </div>
