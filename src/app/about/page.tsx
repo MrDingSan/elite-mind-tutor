@@ -6,22 +6,22 @@ import Image from 'next/image';
 
 const teachingMethods = [
   {
-    icon: <FaLightbulb className="h-8 w-8 text-indigo-600" />,
+    icon: <FaLightbulb className="h-8 w-8 text-navy" />,
     title: "Interactive Learning",
     description: "We believe in active engagement rather than passive learning. Our tutors use interactive methods like problem-solving exercises, group discussions, and real-world applications to make learning more engaging and effective."
   },
   {
-    icon: <FaChartLine className="h-8 w-8 text-indigo-600" />,
+    icon: <FaChartLine className="h-8 w-8 text-navy" />,
     title: "Personalized Approach",
     description: "Every student is unique. We tailor our teaching methods to match individual learning styles, pace, and goals. This personalized approach ensures maximum understanding and retention."
   },
   {
-    icon: <FaBook className="h-8 w-8 text-indigo-600" />,
+    icon: <FaBook className="h-8 w-8 text-navy" />,
     title: "Conceptual Understanding",
     description: "Instead of rote memorization, we focus on building strong conceptual foundations. Students learn to understand the 'why' behind concepts, enabling them to apply knowledge in various contexts."
   },
   {
-    icon: <FaUsers className="h-8 w-8 text-indigo-600" />,
+    icon: <FaUsers className="h-8 w-8 text-navy" />,
     title: "Collaborative Learning",
     description: "We encourage peer learning and group discussions to develop critical thinking and communication skills. This approach helps students learn from different perspectives and build confidence."
   }
@@ -31,17 +31,17 @@ const expertise = [
   {
     title: "Academic Excellence",
     description: "Our tutors are graduates from top universities with strong academic backgrounds and proven teaching experience.",
-    icon: <FaGraduationCap className="h-8 w-8 text-indigo-600" />
+    icon: <FaGraduationCap className="h-8 w-8 text-navy" />
   },
   {
     title: "Curriculum Expertise",
     description: "Specialized knowledge in IB and IGCSE curricula, with deep understanding of examination requirements and assessment criteria.",
-    icon: <FaBook className="h-8 w-8 text-indigo-600" />
+    icon: <FaBook className="h-8 w-8 text-navy" />
   },
   {
     title: "Proven Results",
     description: "Consistent track record of helping students achieve significant grade improvements and top scores in their examinations.",
-    icon: <FaAward className="h-8 w-8 text-indigo-600" />
+    icon: <FaAward className="h-8 w-8 text-navy" />
   }
 ];
 
@@ -72,11 +72,11 @@ export default function About() {
         </div>
         <div className="relative h-full flex items-center">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-            <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold text-white mb-6">
-              About Elite Mind Tutor
+            <h1 className="text-4xl font-bold tracking-tight text-gray-900 sm:text-6xl">
+              About EliteMind Tutor
             </h1>
-            <p className="text-xl text-indigo-100 max-w-3xl mx-auto">
-              Transforming education through personalized learning and innovative teaching methods
+            <p className="mt-6 text-lg leading-8 text-gray-600">
+              At EliteMind Tutor, we are dedicated to transforming the learning experience for every student. Our mission is to ignite a passion for learning while providing the highest quality education that empowers students to achieve their full potential.
             </p>
           </div>
         </div>
@@ -98,7 +98,7 @@ export default function About() {
             <div>
               <h2 className="text-3xl font-bold text-gray-900 mb-4">Our Mission</h2>
               <p className="text-lg text-gray-600 leading-relaxed">
-                At Elite Mind Tutor, we are dedicated to transforming the learning experience for every student. Our mission is to ignite a passion for learning while providing the highest quality education that empowers students to achieve their full potential.
+                At EliteMind, we are dedicated to transforming the learning experience for every student. Our mission is to ignite a passion for learning while providing the highest quality education that empowers students to achieve their full potential.
               </p>
             </div>
             <div>
@@ -125,8 +125,8 @@ export default function About() {
         </div>
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
-            <h2 className="text-3xl font-bold text-white mb-4">
-              Why Choose Elite Mind Tutor?
+            <h2 className="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">
+              Why Choose EliteMind Tutor?
             </h2>
             <p className="text-xl text-indigo-100 max-w-3xl mx-auto">
               Experience the difference of our comprehensive approach to education
@@ -138,7 +138,7 @@ export default function About() {
                 key={index}
                 className="bg-white/10 backdrop-blur-sm rounded-xl p-6 hover:bg-white/20 transition-colors duration-300 flex items-start space-x-4"
               >
-                <FaCheckCircle className="h-6 w-6 text-indigo-300 flex-shrink-0 mt-1" />
+                <FaCheckCircle className="h-6 w-6 text-navy-300 flex-shrink-0 mt-1" />
                 <p className="text-lg text-white">{feature}</p>
               </div>
             ))}

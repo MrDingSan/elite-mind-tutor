@@ -12,7 +12,7 @@ export default function RequestSuccessPage() {
               Request Submitted Successfully!
             </h2>
             <p className="mt-2 text-sm text-gray-600">
-              Thank you for your interest in Elite Mind Tutor. We have received your request and will contact you shortly to discuss your tutoring needs.
+              Thank you for your interest in EliteMind Tutor. We have received your request and will contact you shortly to discuss your tutoring needs.
             </p>
             <div className="mt-6">
               <Link

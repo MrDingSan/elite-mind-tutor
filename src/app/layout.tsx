@@ -3,22 +3,25 @@ import { Inter } from "next/font/google";
 import "./globals.css";
 import { cn } from "@/lib/utils";
 import Navigation from "@/components/Navigation";
-import Head from 'next/head';
 import WhatsAppButton from '@/components/WhatsAppButton';
 
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  metadataBase: new URL('https://elitemindtutor.com'),
+  metadataBase: new URL('https://elite-mind-tutor.pages.dev'),
   title: {
-    default: 'Elite Mind Tutor - Expert IGCSE & IB Tutoring in Singapore',
-    template: '%s | Elite Mind Tutor'
+    default: 'EliteMind Tutor - Expert IGCSE & IB Tutoring in Singapore',
+    template: '%s | EliteMind Tutor'
   },
-  description: 'Expert IGCSE and IB curriculum tutoring in Singapore. Personalized learning plans, qualified tutors, and proven results. Book your session today!',
-  keywords: ['IGCSE tutoring', 'IB tutoring', 'Singapore tutors', 'Math tutoring', 'Science tutoring', 'International school tutoring'],
-  authors: [{ name: 'Elite Mind Tutor' }],
-  creator: 'Elite Mind Tutor',
-  publisher: 'Elite Mind Tutor',
+  description: 'Expert IGCSE & IB tutoring services in Singapore. Personalized learning plans, experienced tutors, and proven results.',
+  keywords: ['IGCSE', 'IB', 'tutoring', 'Singapore', 'education', 'private tutor'],
+  authors: [{ name: 'EliteMind Tutor' }],
+  creator: 'EliteMind Tutor',
+  publisher: 'EliteMind Tutor',
+  icons: {
+    icon: '/images/logo/logo without words.png',
+    apple: '/images/logo/logo without words.png',
+  },
   formatDetection: {
     email: false,
     address: false,
@@ -27,24 +30,24 @@ export const metadata: Metadata = {
   openGraph: {
     type: 'website',
     locale: 'en_SG',
-    url: 'https://elitemindtutor.com',
-    siteName: 'Elite Mind Tutor',
-    title: 'Elite Mind Tutor - Expert IGCSE & IB Tutoring in Singapore',
-    description: 'Expert IGCSE and IB curriculum tutoring in Singapore. Personalized learning plans, qualified tutors, and proven results.',
+    url: 'https://elite-mind-tutor.pages.dev',
+    siteName: 'EliteMind Tutor',
+    title: 'EliteMind Tutor - Expert IGCSE & IB Tutoring in Singapore',
+    description: 'Expert IGCSE & IB tutoring services in Singapore. Personalized learning plans, experienced tutors, and proven results.',
     images: [
       {
-        url: '/images/og-image.jpg',
-        width: 1200,
-        height: 630,
-        alt: 'Elite Mind Tutor',
+        url: '/images/logo/logo without words.png',
+        width: 800,
+        height: 600,
+        alt: 'EliteMind Tutor',
       },
     ],
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Elite Mind Tutor - Expert IGCSE & IB Tutoring in Singapore',
-    description: 'Expert IGCSE and IB curriculum tutoring in Singapore. Personalized learning plans, qualified tutors, and proven results.',
-    images: ['/images/og-image.jpg'],
+    title: 'EliteMind Tutor - Expert IGCSE & IB Tutoring in Singapore',
+    description: 'Expert IGCSE & IB tutoring services in Singapore. Personalized learning plans, experienced tutors, and proven results.',
+    images: ['/images/logo/logo without words.png'],
   },
   robots: {
     index: true,
@@ -69,12 +72,6 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" className="h-full">
-      <Head>
-        <title>Elite Mind Tutor</title>
-        <meta name="description" content="Elite Mind Tutor - Your trusted source for tutoring services." />
-        <meta name="keywords" content="tutoring, education, online tutoring, student help" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-      </Head>
       <body className={cn(
         inter.className,
         "min-h-full bg-white"

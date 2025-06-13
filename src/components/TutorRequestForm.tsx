@@ -127,117 +127,148 @@ export default function TutorRequestForm() {
   };
 
   return (
-    <div className="max-w-3xl mx-auto p-6 bg-white rounded-lg shadow-xl">
-      <div className="mb-8">
-        <h2 className="text-3xl font-bold text-center text-gray-900 mb-2">Find Your Perfect Tutor</h2>
-        <p className="text-center text-gray-600">Fill out the form below and we'll match you with the right tutor</p>
-      </div>
+    <div className="max-w-4xl mx-auto p-6 bg-white rounded-xl shadow-lg">
       <form onSubmit={handleSubmit(onSubmit)} className="space-y-8">
-        <div className="space-y-6">
-          <div>
-            <label className="block text-sm font-medium text-gray-700">Your Name</label>
-            <input type="text" {...register('name')} className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500" />
-          </div>
-          <div>
-            <label className="block text-sm font-medium text-gray-700">Email</label>
-            <input type="email" {...register('email')} className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500" />
-            {errors.email && <p className="mt-1 text-sm text-red-600">{errors.email.message}</p>}
-          </div>
-          <div>
-            <label className="block text-sm font-medium text-gray-700">Phone Number</label>
-            <input type="tel" {...register('phone')} className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500" />
-          </div>
-          <div>
-            <label className="block text-sm font-medium text-gray-700">I am a</label>
-            <select {...register('role')} className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500">
-              <option value="">Select...</option>
-              <option value="STUDENT">Student</option>
-              <option value="PARENT">Parent</option>
-              <option value="OTHER">Other</option>
-            </select>
-          </div>
-          <div>
-            <label className="block text-sm font-medium text-gray-700">Student's Name</label>
-            <input type="text" {...register('studentName')} className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500" />
-          </div>
-          <div>
-            <label className="block text-sm font-medium text-gray-700">Student's Gender</label>
-            <select {...register('studentGender')} className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500">
-              <option value="">Select...</option>
-              <option value="MALE">Male</option>
-              <option value="FEMALE">Female</option>
-            </select>
-          </div>
-          <div>
-            <label className="block text-sm font-medium text-gray-700">Student's School</label>
-            <input type="text" {...register('studentSchool')} className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500" />
-          </div>
-          <div>
-            <label className="block text-sm font-medium text-gray-700">Grade/Level</label>
-            <input type="text" {...register('studentGrade')} className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500" />
-          </div>
-          <div>
-            <label className="block text-sm font-medium text-gray-700">Curriculum</label>
-            <select {...register('curriculum')} className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500">
-              <option value="">Select...</option>
-              <option value="IGCSE">IGCSE</option>
-              <option value="IB">IB</option>
-            </select>
-            {errors.curriculum && <p className="mt-1 text-sm text-red-600">{errors.curriculum.message}</p>}
-          </div>
-          <div>
-            <label className="block text-sm font-medium text-gray-700">Subjects</label>
-            <div className="mt-2 space-y-2">
-              {['Mathematics', 'Physics', 'Chemistry', 'Biology', 'English', 'Economics'].map((subject) => (
-                <label key={subject} className="inline-flex items-center mr-4">
-                  <input type="checkbox" value={subject} {...register('subjects')} className="rounded border-gray-300 text-indigo-600 shadow-sm focus:border-indigo-500 focus:ring-indigo-500" />
-                  <span className="ml-2">{subject}</span>
-                </label>
-              ))}
+        {/* Contact Information Section */}
+        <div className="bg-gray-50 p-6 rounded-lg">
+          <h3 className="text-xl font-semibold text-gray-900 mb-6">Contact Information</h3>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <div>
+              <label className="block text-sm font-medium text-gray-700 mb-2">Your Name</label>
+              <input type="text" {...register('name')} className="block w-full h-11 px-4 rounded-lg border-gray-300 shadow-sm focus:border-navy focus:ring-navy" />
+            </div>
+            <div>
+              <label className="block text-sm font-medium text-gray-700 mb-2">Email</label>
+              <input type="email" {...register('email')} className="block w-full h-11 px-4 rounded-lg border-gray-300 shadow-sm focus:border-navy focus:ring-navy" />
+              {errors.email && <p className="mt-2 text-sm text-red-600">{errors.email.message}</p>}
+            </div>
+            <div>
+              <label className="block text-sm font-medium text-gray-700 mb-2">Phone Number</label>
+              <input type="tel" {...register('phone')} className="block w-full h-11 px-4 rounded-lg border-gray-300 shadow-sm focus:border-navy focus:ring-navy" />
+            </div>
+            <div>
+              <label className="block text-sm font-medium text-gray-700 mb-2">I am a</label>
+              <select {...register('role')} className="block w-full h-11 px-4 rounded-lg border-gray-300 shadow-sm focus:border-navy focus:ring-navy">
+                <option value="">Select...</option>
+                <option value="STUDENT">Student</option>
+                <option value="PARENT">Parent</option>
+                <option value="OTHER">Other</option>
+              </select>
             </div>
           </div>
+        </div>
+
+        {/* Student Information Section */}
+        <div className="bg-gray-50 p-6 rounded-lg">
+          <h3 className="text-xl font-semibold text-gray-900 mb-6">Student Information</h3>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <div>
+              <label className="block text-sm font-medium text-gray-700 mb-2">Student's Name</label>
+              <input type="text" {...register('studentName')} className="block w-full h-11 px-4 rounded-lg border-gray-300 shadow-sm focus:border-navy focus:ring-navy" />
+            </div>
+            <div>
+              <label className="block text-sm font-medium text-gray-700 mb-2">Student's Gender</label>
+              <select {...register('studentGender')} className="block w-full h-11 px-4 rounded-lg border-gray-300 shadow-sm focus:border-navy focus:ring-navy">
+                <option value="">Select...</option>
+                <option value="MALE">Male</option>
+                <option value="FEMALE">Female</option>
+              </select>
+            </div>
+            <div>
+              <label className="block text-sm font-medium text-gray-700 mb-2">Student's School</label>
+              <input type="text" {...register('studentSchool')} className="block w-full h-11 px-4 rounded-lg border-gray-300 shadow-sm focus:border-navy focus:ring-navy" />
+            </div>
+            <div>
+              <label className="block text-sm font-medium text-gray-700 mb-2">Grade/Level</label>
+              <input type="text" {...register('studentGrade')} className="block w-full h-11 px-4 rounded-lg border-gray-300 shadow-sm focus:border-navy focus:ring-navy" />
+            </div>
+          </div>
+        </div>
+
+        {/* Academic Information Section */}
+        <div className="bg-gray-50 p-6 rounded-lg">
+          <h3 className="text-xl font-semibold text-gray-900 mb-6">Academic Information</h3>
+          <div className="space-y-6">
+            <div>
+              <label className="block text-sm font-medium text-gray-700 mb-2">Curriculum</label>
+              <select {...register('curriculum')} className="block w-full h-11 px-4 rounded-lg border-gray-300 shadow-sm focus:border-navy focus:ring-navy">
+                <option value="">Select...</option>
+                <option value="IGCSE">IGCSE</option>
+                <option value="IB">IB</option>
+              </select>
+              {errors.curriculum && <p className="mt-2 text-sm text-red-600">{errors.curriculum.message}</p>}
+            </div>
+            <div>
+              <label className="block text-sm font-medium text-gray-700 mb-3">Subjects</label>
+              <div className="grid grid-cols-2 md:grid-cols-3 gap-3">
+                {['Mathematics', 'Physics', 'Chemistry', 'Biology', 'English', 'Economics'].map((subject) => (
+                  <label key={subject} className="flex items-center space-x-2 p-3 bg-white rounded-lg border border-gray-200 hover:border-navy cursor-pointer">
+                    <input type="checkbox" value={subject} {...register('subjects')} className="h-4 w-4 rounded border-gray-300 text-navy focus:ring-navy" />
+                    <span className="text-sm text-gray-700">{subject}</span>
+                  </label>
+                ))}
+              </div>
+            </div>
+          </div>
+        </div>
+
+        {/* Tutoring Preferences Section */}
+        <div className="bg-gray-50 p-6 rounded-lg">
+          <h3 className="text-xl font-semibold text-gray-900 mb-6">Tutoring Preferences</h3>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <div>
+              <label className="block text-sm font-medium text-gray-700 mb-2">Preferred Frequency</label>
+              <select {...register('preferredFrequency')} className="block w-full h-11 px-4 rounded-lg border-gray-300 shadow-sm focus:border-navy focus:ring-navy">
+                <option value="">Select...</option>
+                <option value="Once a week">Once a week</option>
+                <option value="Twice a week">Twice a week</option>
+                <option value="Three times a week">Three times a week</option>
+                <option value="More">More</option>
+              </select>
+            </div>
+            <div>
+              <label className="block text-sm font-medium text-gray-700 mb-2">Preferred Duration</label>
+              <select {...register('preferredDuration')} className="block w-full h-11 px-4 rounded-lg border-gray-300 shadow-sm focus:border-navy focus:ring-navy">
+                <option value="">Select...</option>
+                <option value="1 hour">1 hour</option>
+                <option value="1.5 hours">1.5 hours</option>
+                <option value="2 hours">2 hours</option>
+                <option value="More">More</option>
+              </select>
+            </div>
+            <div>
+              <label className="block text-sm font-medium text-gray-700 mb-2">Preferred Tutor Type</label>
+              <select {...register('preferredTutorType')} className="block w-full h-11 px-4 rounded-lg border-gray-300 shadow-sm focus:border-navy focus:ring-navy">
+                <option value="">Select...</option>
+                <option value="Online">Online</option>
+                <option value="In-person">In-person</option>
+                <option value="Both">Both</option>
+              </select>
+            </div>
+            <div>
+              <label className="block text-sm font-medium text-gray-700 mb-2">Address</label>
+              <input type="text" {...register('address')} className="block w-full h-11 px-4 rounded-lg border-gray-300 shadow-sm focus:border-navy focus:ring-navy" />
+            </div>
+          </div>
+        </div>
+
+        {/* Additional Information Section */}
+        <div className="bg-gray-50 p-6 rounded-lg">
+          <h3 className="text-xl font-semibold text-gray-900 mb-6">Additional Information</h3>
           <div>
-            <label className="block text-sm font-medium text-gray-700">Preferred Frequency</label>
-            <select {...register('preferredFrequency')} className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500">
-              <option value="">Select...</option>
-              <option value="Once a week">Once a week</option>
-              <option value="Twice a week">Twice a week</option>
-              <option value="Three times a week">Three times a week</option>
-              <option value="More">More</option>
-            </select>
+            <label className="block text-sm font-medium text-gray-700 mb-2">Additional Notes</label>
+            <textarea {...register('additionalNotes')} rows={4} className="block w-full px-4 py-3 rounded-lg border-gray-300 shadow-sm focus:border-navy focus:ring-navy" />
           </div>
-          <div>
-            <label className="block text-sm font-medium text-gray-700">Preferred Duration</label>
-            <select {...register('preferredDuration')} className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500">
-              <option value="">Select...</option>
-              <option value="1 hour">1 hour</option>
-              <option value="1.5 hours">1.5 hours</option>
-              <option value="2 hours">2 hours</option>
-              <option value="More">More</option>
-            </select>
-          </div>
-          <div>
-            <label className="block text-sm font-medium text-gray-700">Preferred Tutor Type</label>
-            <select {...register('preferredTutorType')} className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500">
-              <option value="">Select...</option>
-              <option value="Online">Online</option>
-              <option value="In-person">In-person</option>
-              <option value="Both">Both</option>
-            </select>
-          </div>
-          <div>
-            <label className="block text-sm font-medium text-gray-700">Address</label>
-            <input type="text" {...register('address')} className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500" />
-          </div>
-          <div>
-            <label className="block text-sm font-medium text-gray-700">Additional Notes</label>
-            <textarea {...register('additionalNotes')} className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500" />
-          </div>
-          <div className="flex justify-end">
-            <button type="submit" className="px-4 py-2 text-sm font-medium text-white bg-indigo-600 rounded-md hover:bg-indigo-700 disabled:opacity-50" disabled={isSubmitting}>
-              {isSubmitting ? 'Submitting...' : 'Submit'}
-            </button>
-          </div>
+        </div>
+
+        <div className="flex justify-end">
+          <button
+            type="submit"
+            className="px-6 py-3 text-base font-medium text-white bg-navy rounded-lg hover:bg-navy-600 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-navy disabled:opacity-50 transition-colors duration-200"
+            disabled={isSubmitting}
+          >
+            {isSubmitting ? 'Submitting...' : 'Submit Request'}
+          </button>
         </div>
       </form>
     </div>

@@ -15,8 +15,8 @@ const faqData: FAQItem[] = [
   {
     category: "About Our Service",
     icon: <FaGraduationCap className="h-6 w-6" />,
-    question: "What makes Elite Mind Tutor different from other tuition services?",
-    answer: "Elite Mind Tutor stands out through our commitment to excellence in every aspect of our service:\n\n1) Personalized Matching System: We carefully match students with tutors based on learning style, personality, and academic goals, ensuring the perfect fit for optimal learning.\n\n2) Exceptional Tutor Quality: Our tutors are all experienced professionals with strong academic backgrounds from top universities and proven teaching credentials.\n\n3) Proven Track Record: We maintain detailed records of student progress and have consistently helped students achieve significant grade improvements, with many achieving top scores in their respective subjects.\n\n4) Comprehensive Support: Beyond just tutoring, we provide study materials, progress tracking, and regular feedback to ensure continuous improvement."
+    question: "What makes EliteMind Tutor different from other tuition services?",
+    answer: "EliteMind Tutor stands out through our commitment to excellence in every aspect of our service:\n\n1) Personalized Matching System: We carefully match students with tutors based on learning style, personality, and academic goals.\n\n2) Quality Assurance: All our tutors are rigorously vetted and continuously monitored to ensure the highest standards of teaching.\n\n3) Comprehensive Support: Beyond subject tutoring, we provide exam preparation, study skills development, and academic counseling.\n\n4) Flexible Learning: Choose between online and in-person sessions, with scheduling that fits your family's needs."
   },
   {
     category: "About Our Service",
@@ -51,8 +51,8 @@ const faqData: FAQItem[] = [
   {
     category: "Scheduling and Rates",
     icon: <FaClock className="h-6 w-6" />,
-    question: "How do I schedule a tutoring session?",
-    answer: "Scheduling with Elite Mind Tutor is simple and flexible:\n\n1) Initial Contact:\n   - Through our website\n   - Phone call\n   - Email\n   - WhatsApp\n\n2) Consultation:\n   - Discuss your requirements with our education consultants\n   - Share your academic goals and preferences\n   - Review available time slots\n\n3) Schedule Selection:\n   - Choose from available slots 7 days a week\n   - Morning, afternoon, or evening sessions\n   - Regular or flexible scheduling options\n\n4) Location Choice:\n   - Home visits\n   - Online sessions\n   - Our learning center\n\nWe'll match you with the most suitable tutor and confirm the schedule within 24 hours of your initial contact."
+    question: "How do I schedule a session with EliteMind Tutor?",
+    answer: "Scheduling with EliteMind Tutor is simple and flexible:\n\n1) Initial Contact:\n   - Through our website\n   - Phone call\n   - Email\n   - WhatsApp\n\n2) Consultation:\n   - Discuss your requirements with our education consultants\n   - Share your academic goals and challenges\n   - Get matched with the most suitable tutor\n\n3) Session Planning:\n   - Choose your preferred schedule\n   - Select learning format (online/in-person)\n   - Confirm payment details\n\n4) Begin Learning:\n   - Meet your tutor\n   - Start your personalized learning journey\n   - Receive regular progress updates"
   },
   {
     category: "Scheduling and Rates",

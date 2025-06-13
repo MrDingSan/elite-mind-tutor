@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import Image from "next/image";
 import { useState } from "react";
 import { FaBars, FaTimes } from "react-icons/fa";
 
@@ -13,44 +14,54 @@ export default function Navigation() {
         <div className="flex h-16 justify-between">
           <div className="flex">
             <div className="flex flex-shrink-0 items-center">
-              <Link href="/" className="text-2xl font-bold text-indigo-600 hover:text-indigo-500">
-                Elite Mind Tutor
+              <Link href="/" className="flex items-center space-x-3">
+                <div className="flex items-center">
+                  <Image
+                    src="/images/logo/logo without words.png"
+                    alt="EliteMind Tutor Logo"
+                    width={40}
+                    height={40}
+                    className="h-10 w-10"
+                    priority
+                  />
+                  <span className="ml-2 text-xl font-semibold text-navy">EliteMind Tutor</span>
+                </div>
               </Link>
             </div>
             <div className="hidden sm:ml-6 sm:flex sm:space-x-8">
               <Link
                 href="/about"
-                className="inline-flex items-center border-b-2 border-transparent px-1 pt-1 text-sm font-medium text-gray-500 hover:border-gray-300 hover:text-gray-700"
+                className="inline-flex items-center border-b-2 border-transparent px-1 pt-1 text-sm font-medium text-gray-500 hover:border-navy hover:text-navy"
               >
                 About
               </Link>
               <Link
                 href="/services"
-                className="inline-flex items-center border-b-2 border-transparent px-1 pt-1 text-sm font-medium text-gray-500 hover:border-gray-300 hover:text-gray-700"
+                className="inline-flex items-center border-b-2 border-transparent px-1 pt-1 text-sm font-medium text-gray-500 hover:border-navy hover:text-navy"
               >
                 Services
               </Link>
               <Link
                 href="/tutors"
-                className="inline-flex items-center border-b-2 border-transparent px-1 pt-1 text-sm font-medium text-gray-500 hover:border-gray-300 hover:text-gray-700"
+                className="inline-flex items-center border-b-2 border-transparent px-1 pt-1 text-sm font-medium text-gray-500 hover:border-navy hover:text-navy"
               >
                 Tutors
               </Link>
               <Link
                 href="/blog"
-                className="inline-flex items-center border-b-2 border-transparent px-1 pt-1 text-sm font-medium text-gray-500 hover:border-gray-300 hover:text-gray-700"
+                className="inline-flex items-center border-b-2 border-transparent px-1 pt-1 text-sm font-medium text-gray-500 hover:border-navy hover:text-navy"
               >
                 Blog
               </Link>
               <Link
                 href="/faq"
-                className="inline-flex items-center border-b-2 border-transparent px-1 pt-1 text-sm font-medium text-gray-500 hover:border-gray-300 hover:text-gray-700"
+                className="inline-flex items-center border-b-2 border-transparent px-1 pt-1 text-sm font-medium text-gray-500 hover:border-navy hover:text-navy"
               >
                 FAQ
               </Link>
               <Link
                 href="/contact"
-                className="inline-flex items-center border-b-2 border-transparent px-1 pt-1 text-sm font-medium text-gray-500 hover:border-gray-300 hover:text-gray-700"
+                className="inline-flex items-center border-b-2 border-transparent px-1 pt-1 text-sm font-medium text-gray-500 hover:border-navy hover:text-navy"
               >
                 Contact
               </Link>
@@ -59,7 +70,7 @@ export default function Navigation() {
           <div className="hidden sm:ml-6 sm:flex sm:items-center">
             <Link
               href="/request-tutor"
-              className="rounded-md bg-indigo-600 px-3 py-2 text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
+              className="rounded-md bg-navy px-3 py-2 text-sm font-semibold text-white shadow-sm hover:bg-navy-600 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-navy"
             >
               Request a Tutor
             </Link>
@@ -67,7 +78,7 @@ export default function Navigation() {
           <div className="-mr-2 flex items-center sm:hidden">
             <button
               type="button"
-              className="inline-flex items-center justify-center rounded-md p-2 text-gray-400 hover:bg-gray-100 hover:text-gray-500 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-indigo-500"
+              className="inline-flex items-center justify-center rounded-md p-2 text-gray-400 hover:bg-gray-100 hover:text-gray-500 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-navy"
               onClick={() => setIsOpen(!isOpen)}
             >
               <span className="sr-only">Open main menu</span>
@@ -87,37 +98,37 @@ export default function Navigation() {
           <div className="space-y-1 pb-3 pt-2">
             <Link
               href="/about"
-              className="block border-l-4 border-transparent py-2 pl-3 pr-4 text-base font-medium text-gray-500 hover:border-gray-300 hover:bg-gray-50 hover:text-gray-700"
+              className="block border-l-4 border-transparent py-2 pl-3 pr-4 text-base font-medium text-gray-500 hover:border-navy hover:bg-gray-50 hover:text-navy"
             >
               About
             </Link>
             <Link
               href="/services"
-              className="block border-l-4 border-transparent py-2 pl-3 pr-4 text-base font-medium text-gray-500 hover:border-gray-300 hover:bg-gray-50 hover:text-gray-700"
+              className="block border-l-4 border-transparent py-2 pl-3 pr-4 text-base font-medium text-gray-500 hover:border-navy hover:bg-gray-50 hover:text-navy"
             >
               Services
             </Link>
             <Link
               href="/tutors"
-              className="block border-l-4 border-transparent py-2 pl-3 pr-4 text-base font-medium text-gray-500 hover:border-gray-300 hover:bg-gray-50 hover:text-gray-700"
+              className="block border-l-4 border-transparent py-2 pl-3 pr-4 text-base font-medium text-gray-500 hover:border-navy hover:bg-gray-50 hover:text-navy"
             >
               Tutors
             </Link>
             <Link
               href="/blog"
-              className="block border-l-4 border-transparent py-2 pl-3 pr-4 text-base font-medium text-gray-500 hover:border-gray-300 hover:bg-gray-50 hover:text-gray-700"
+              className="block border-l-4 border-transparent py-2 pl-3 pr-4 text-base font-medium text-gray-500 hover:border-navy hover:bg-gray-50 hover:text-navy"
             >
               Blog
             </Link>
             <Link
               href="/faq"
-              className="block border-l-4 border-transparent py-2 pl-3 pr-4 text-base font-medium text-gray-500 hover:border-gray-300 hover:bg-gray-50 hover:text-gray-700"
+              className="block border-l-4 border-transparent py-2 pl-3 pr-4 text-base font-medium text-gray-500 hover:border-navy hover:bg-gray-50 hover:text-navy"
             >
               FAQ
             </Link>
             <Link
               href="/contact"
-              className="block border-l-4 border-transparent py-2 pl-3 pr-4 text-base font-medium text-gray-500 hover:border-gray-300 hover:bg-gray-50 hover:text-gray-700"
+              className="block border-l-4 border-transparent py-2 pl-3 pr-4 text-base font-medium text-gray-500 hover:border-navy hover:bg-gray-50 hover:text-navy"
             >
               Contact
             </Link>
@@ -126,7 +137,7 @@ export default function Navigation() {
             <div className="flex items-center px-4">
               <Link
                 href="/request-tutor"
-                className="block w-full rounded-md bg-indigo-600 px-3 py-2 text-center text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
+                className="block w-full rounded-md bg-navy px-3 py-2 text-center text-sm font-semibold text-white shadow-sm hover:bg-navy-600 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-navy"
               >
                 Request a Tutor
               </Link>

@@ -13,9 +13,9 @@ export default function Home() {
           {JSON.stringify({
             "@context": "https://schema.org",
             "@type": "Organization",
-            "name": "Elite Mind Tutor",
+            "name": "EliteMind Tutor",
             "url": "https://elite-mind-tutor.pages.dev",
-            "description": "Elite Mind Tutor - Your trusted source for tutoring services.",
+            "description": "EliteMind Tutor - Your trusted source for tutoring services.",
             "address": {
               "@type": "PostalAddress",
               "addressCountry": "US"
@@ -51,7 +51,7 @@ export default function Home() {
               <div className="space-y-6">
                 <Link
                   href="/request-tutor"
-                  className="inline-flex items-center justify-center rounded-lg bg-[#5A4BFF] px-8 py-4 text-lg font-semibold text-white shadow-sm hover:bg-[#4A3BEF] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#5A4BFF] transition-colors"
+                  className="inline-flex items-center justify-center rounded-lg bg-navy px-8 py-4 text-lg font-semibold text-white shadow-sm hover:bg-navy-600 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-navy transition-colors"
                 >
                   Request a Tutor
                   <svg className="ml-2 w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -89,7 +89,7 @@ export default function Home() {
             <div className="grid grid-cols-1 gap-8 sm:grid-cols-3">
               <div className="relative flex flex-col items-center p-8 bg-white rounded-2xl shadow-sm border border-gray-100">
                 <div className="absolute -top-4 left-1/2 transform -translate-x-1/2">
-                  <div className="bg-gradient-to-br from-[#5A4BFF] to-[#4A3BEF] p-3 rounded-full">
+                  <div className="bg-gradient-to-br from-navy to-navy-600 p-3 rounded-full">
                     <FaStar className="h-6 w-6 text-white" />
                   </div>
                 </div>
@@ -109,7 +109,7 @@ export default function Home() {
 
               <div className="relative flex flex-col items-center p-8 bg-white rounded-2xl shadow-sm border border-gray-100">
                 <div className="absolute -top-4 left-1/2 transform -translate-x-1/2">
-                  <div className="bg-gradient-to-br from-[#5A4BFF] to-[#4A3BEF] p-3 rounded-full">
+                  <div className="bg-gradient-to-br from-navy to-navy-600 p-3 rounded-full">
                     <FaGraduationCap className="h-6 w-6 text-white" />
                   </div>
                 </div>
@@ -129,7 +129,7 @@ export default function Home() {
 
               <div className="relative flex flex-col items-center p-8 bg-white rounded-2xl shadow-sm border border-gray-100">
                 <div className="absolute -top-4 left-1/2 transform -translate-x-1/2">
-                  <div className="bg-gradient-to-br from-[#5A4BFF] to-[#4A3BEF] p-3 rounded-full">
+                  <div className="bg-gradient-to-br from-navy to-navy-600 p-3 rounded-full">
                     <FaChalkboardTeacher className="h-6 w-6 text-white" />
                   </div>
                 </div>
@@ -169,7 +169,7 @@ export default function Home() {
             <div className="grid grid-cols-1 gap-8 sm:grid-cols-3">
               <div className="relative flex flex-col p-8 bg-[#FAFAFC] rounded-2xl shadow-[0_8px_16px_rgba(0,0,0,0.05)] hover:shadow-xl transition-shadow duration-300">
                 <div className="absolute -top-4 left-8">
-                  <div className="bg-gradient-to-br from-[#5A4BFF] to-[#4A3BEF] p-3 rounded-full">
+                  <div className="bg-gradient-to-br from-navy to-navy-600 p-3 rounded-full">
                     <FaBook className="h-6 w-6 text-white" />
                   </div>
                 </div>
@@ -185,7 +185,7 @@ export default function Home() {
 
               <div className="relative flex flex-col p-8 bg-[#FAFAFC] rounded-2xl shadow-[0_8px_16px_rgba(0,0,0,0.05)] hover:shadow-xl transition-shadow duration-300">
                 <div className="absolute -top-4 left-8">
-                  <div className="bg-gradient-to-br from-[#5A4BFF] to-[#4A3BEF] p-3 rounded-full">
+                  <div className="bg-gradient-to-br from-navy to-navy-600 p-3 rounded-full">
                     <FaAward className="h-6 w-6 text-white" />
                   </div>
                 </div>
@@ -201,7 +201,7 @@ export default function Home() {
 
               <div className="relative flex flex-col p-8 bg-[#FAFAFC] rounded-2xl shadow-[0_8px_16px_rgba(0,0,0,0.05)] hover:shadow-xl transition-shadow duration-300">
                 <div className="absolute -top-4 left-8">
-                  <div className="bg-gradient-to-br from-[#5A4BFF] to-[#4A3BEF] p-3 rounded-full">
+                  <div className="bg-gradient-to-br from-navy to-navy-600 p-3 rounded-full">
                     <FaQuestionCircle className="h-6 w-6 text-white" />
                   </div>
                 </div>
@@ -215,7 +215,7 @@ export default function Home() {
                   <div className="mt-6">
                     <Link
                       href="/faq"
-                      className="inline-flex items-center gap-x-2 text-[#5A4BFF] hover:text-[#4A3BEF] transition-colors"
+                      className="inline-flex items-center gap-x-2 text-navy hover:text-navy-600 transition-colors"
                     >
                       View FAQ
                       <svg className="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
@@ -238,7 +238,7 @@ export default function Home() {
               Need help choosing the right tutor?
             </h2>
             <p className="mt-4 text-lg leading-8 text-gray-600">
-              Call or WhatsApp us → <a href="https://wa.me/6585159132" className="text-[#5A4BFF] hover:text-[#4A3BEF] transition-colors">+65 8515 9132</a>
+              Call or WhatsApp us → <a href="https://wa.me/6585159132" className="text-navy hover:text-navy-600 transition-colors">+65 8515 9132</a>
             </p>
             <div className="mt-8 flex justify-center">
               <Link
