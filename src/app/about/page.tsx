@@ -113,58 +113,18 @@ export default function About() {
               We combine proven teaching methodologies with innovative approaches to create an engaging and effective learning environment.
             </p>
           </div>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            <div className="bg-white p-8 rounded-xl shadow-sm">
-              <div className="relative h-48 mb-6 rounded-lg overflow-hidden">
-                <Image
-                  src="/images/students/study4.jpg"
-                  alt="Personalized Learning"
-                  fill
-                  className="object-cover"
-                />
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+            {teachingMethods.map((method, index) => (
+              <div key={index} className="bg-white p-8 rounded-xl shadow-sm">
+                <div className="w-12 h-12 bg-navy/10 rounded-lg flex items-center justify-center mb-6">
+                  {method.icon}
+                </div>
+                <h3 className="text-xl font-semibold text-gray-900 mb-4">{method.title}</h3>
+                <p className="text-gray-600">
+                  {method.description}
+                </p>
               </div>
-              <div className="w-12 h-12 bg-navy/10 rounded-lg flex items-center justify-center mb-6">
-                <FaLightbulb className="h-6 w-6 text-navy" />
-              </div>
-              <h3 className="text-xl font-semibold text-gray-900 mb-4">Personalized Learning</h3>
-              <p className="text-gray-600">
-                Tailored teaching approaches that adapt to each student's unique learning style and pace.
-              </p>
-            </div>
-            <div className="bg-white p-8 rounded-xl shadow-sm">
-              <div className="relative h-48 mb-6 rounded-lg overflow-hidden">
-                <Image
-                  src="/images/students/tutoring1.jpg"
-                  alt="Progress Tracking"
-                  fill
-                  className="object-cover"
-                />
-              </div>
-              <div className="w-12 h-12 bg-navy/10 rounded-lg flex items-center justify-center mb-6">
-                <FaChartLine className="h-6 w-6 text-navy" />
-              </div>
-              <h3 className="text-xl font-semibold text-gray-900 mb-4">Progress Tracking</h3>
-              <p className="text-gray-600">
-                Regular assessments and detailed progress reports to ensure continuous improvement.
-              </p>
-            </div>
-            <div className="bg-white p-8 rounded-xl shadow-sm">
-              <div className="relative h-48 mb-6 rounded-lg overflow-hidden">
-                <Image
-                  src="/images/students/group_study1.jpg"
-                  alt="Curriculum"
-                  fill
-                  className="object-cover"
-                />
-              </div>
-              <div className="w-12 h-12 bg-navy/10 rounded-lg flex items-center justify-center mb-6">
-                <FaBook className="h-6 w-6 text-navy" />
-              </div>
-              <h3 className="text-xl font-semibold text-gray-900 mb-4">Comprehensive Curriculum</h3>
-              <p className="text-gray-600">
-                Well-structured lessons covering all aspects of the syllabus with practical applications.
-              </p>
-            </div>
+            ))}
           </div>
         </div>
       </div>
