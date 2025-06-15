@@ -19,8 +19,13 @@ export const metadata: Metadata = {
   creator: 'EliteMind Tutor',
   publisher: 'EliteMind Tutor',
   icons: {
-    icon: '/images/logo/logo without words.png',
-    apple: '/images/logo/logo without words.png',
+    icon: [
+      { url: '/favicon.ico' },
+      { url: '/images/logo/logo without words.png', type: 'image/png' }
+    ],
+    apple: [
+      { url: '/images/logo/logo without words.png', type: 'image/png' }
+    ],
   },
   formatDetection: {
     email: false,
