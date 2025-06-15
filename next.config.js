@@ -3,7 +3,13 @@ const nextConfig = {
   reactStrictMode: true,
   swcMinify: true,
   images: {
-    unoptimized: true,
+    domains: ['elite-mind-tutor.pages.dev'],
+    remotePatterns: [
+      {
+        protocol: 'https',
+        hostname: 'elite-mind-tutor.pages.dev',
+      },
+    ],
   },
   webpack: (config) => {
     config.resolve.alias = {

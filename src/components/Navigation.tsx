@@ -7,6 +7,7 @@ import { FaBars, FaTimes } from "react-icons/fa";
 
 export default function Navigation() {
   const [isOpen, setIsOpen] = useState(false);
+  const [logoError, setLogoError] = useState(false);
 
   return (
     <nav className="bg-white shadow-sm sticky top-0 z-50">
@@ -16,14 +17,21 @@ export default function Navigation() {
             <div className="flex flex-shrink-0 items-center">
               <Link href="/" className="flex items-center space-x-3">
                 <div className="flex items-center">
-                  <Image
-                    src="/images/logo/logo without words.png"
-                    alt="EliteMind Tutor Logo"
-                    width={40}
-                    height={40}
-                    className="h-10 w-10"
-                    priority
-                  />
+                  {!logoError ? (
+                    <Image
+                      src="/images/logo/logo without words.png"
+                      alt="EliteMind Tutor Logo"
+                      width={40}
+                      height={40}
+                      className="h-10 w-10"
+                      priority
+                      onError={() => setLogoError(true)}
+                    />
+                  ) : (
+                    <div className="h-10 w-10 bg-navy rounded-full flex items-center justify-center">
+                      <span className="text-white text-lg font-bold">E</span>
+                    </div>
+                  )}
                   <span className="ml-2 text-xl font-semibold text-navy">EliteMind Tutor</span>
                 </div>
               </Link>
