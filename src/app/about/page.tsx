@@ -28,24 +28,6 @@ const teachingMethods = [
   }
 ];
 
-const expertise = [
-  {
-    title: "Academic Excellence",
-    description: "Our tutors are graduates from top universities with strong academic backgrounds and proven teaching experience.",
-    icon: <FaGraduationCap className="h-8 w-8 text-navy" />
-  },
-  {
-    title: "Curriculum Expertise",
-    description: "Specialized knowledge in IB and IGCSE curricula, with deep understanding of examination requirements and assessment criteria.",
-    icon: <FaBook className="h-8 w-8 text-navy" />
-  },
-  {
-    title: "Proven Results",
-    description: "Consistent track record of helping students achieve significant grade improvements and top scores in their examinations.",
-    icon: <FaAward className="h-8 w-8 text-navy" />
-  }
-];
-
 const keyFeatures = [
   "Personalized learning plans tailored to each student",
   "Expert tutors from top universities",
