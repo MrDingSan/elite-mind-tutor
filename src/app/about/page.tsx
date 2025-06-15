@@ -28,15 +28,6 @@ const teachingMethods = [
   }
 ];
 
-const keyFeatures = [
-  "Personalized learning plans tailored to each student",
-  "Expert tutors from top universities",
-  "Comprehensive IB and IGCSE curriculum coverage",
-  "Regular progress tracking and feedback",
-  "Flexible scheduling options",
-  "Both online and in-person tutoring available"
-];
-
 export default function About() {
   return (
     <div className="min-h-screen bg-white">
