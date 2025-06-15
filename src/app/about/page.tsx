@@ -1,7 +1,7 @@
 "use client";
 
 import React from 'react';
-import { FaLightbulb, FaChartLine, FaUsers, FaBook, FaAward, FaClock, FaChartBar, FaHandshake } from 'react-icons/fa';
+import { FaLightbulb, FaChartLine, FaUsers, FaBook, FaClock, FaChartBar, FaHandshake } from 'react-icons/fa';
 import Image from 'next/image';
 import Link from 'next/link';
 
