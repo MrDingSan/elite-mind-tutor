@@ -4,7 +4,7 @@ export const runtime = 'edge';
 
 import React, { useState, useEffect } from 'react';
 import Link from 'next/link';
-import { FaArrowLeft, FaShare, FaBookmark, FaClock, FaCalendarAlt, FaTag } from 'react-icons/fa';
+import { FaArrowLeft, FaBookmark, FaClock, FaCalendarAlt, FaTag } from 'react-icons/fa';
 
 const blogPosts = {
   'choosing-international-school-singapore-2025': {
