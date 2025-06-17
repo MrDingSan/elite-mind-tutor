@@ -1,7 +1,7 @@
 "use client";
 
 import React from 'react';
-import { FaPhone, FaClock, FaEnvelope, FaMapMarkerAlt } from 'react-icons/fa';
+import { FaPhone, FaClock, FaMapMarkerAlt } from 'react-icons/fa';
 import Image from 'next/image';
 
 export default function Contact() {
