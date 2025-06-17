@@ -19,13 +19,7 @@ export const metadata: Metadata = {
   creator: 'EliteMind Tutor',
   publisher: 'EliteMind Tutor',
   icons: {
-    icon: [
-      { url: '/favicon.ico' },
-      { url: '/images/logo/logo without words.png', type: 'image/png' }
-    ],
-    apple: [
-      { url: '/images/logo/logo without words.png', type: 'image/png' }
-    ],
+    icon: '/favicon.ico',
   },
   formatDetection: {
     email: false,
@@ -77,6 +71,9 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" className="h-full">
+      <head>
+        <link rel="icon" href="/favicon.ico" sizes="any" />
+      </head>
       <body className={cn(
         inter.className,
         "min-h-full bg-white"

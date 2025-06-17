@@ -19,7 +19,7 @@ export default function Navigation() {
                 <div className="flex items-center">
                   {!logoError ? (
                     <Image
-                      src="/images/logo/logo without words.png"
+                      src="/images/logo/logo-without-words.png"
                       alt="EliteMind Tutor Logo"
                       width={40}
                       height={40}
