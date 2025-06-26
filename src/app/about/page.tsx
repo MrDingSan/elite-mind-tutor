@@ -35,7 +35,7 @@ export default function About() {
       <div className="relative bg-navy">
         <div className="absolute inset-0">
           <Image
-            src="/images/students/classroom2.jpg"
+            src="/images/students/math-tuition.jpg"
             alt="Students learning"
             fill
             className="object-cover opacity-20"
@@ -60,8 +60,8 @@ export default function About() {
         <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
           <div className="relative h-[400px] rounded-2xl overflow-hidden shadow-lg">
             <Image
-              src="/images/students/study3.jpg"
-              alt="Students in classroom"
+              src="/images/students/tuition-student-study.jpg"
+              alt="Student studying at desk"
               fill
               className="object-cover"
             />
@@ -114,7 +114,7 @@ export default function About() {
           <div className="text-center">
             <div className="relative h-48 mb-6 rounded-lg overflow-hidden">
               <Image
-                src="/images/students/classroom3.jpg"
+                src="/images/students/ib-tuition-group.jpg"
                 alt="Expert Tutors"
                 fill
                 className="object-cover"
@@ -131,7 +131,7 @@ export default function About() {
           <div className="text-center">
             <div className="relative h-48 mb-6 rounded-lg overflow-hidden">
               <Image
-                src="/images/students/classroom4.jpg"
+                src="/images/students/private-tutor.jpg"
                 alt="Flexible Scheduling"
                 fill
                 className="object-cover"
@@ -148,7 +148,7 @@ export default function About() {
           <div className="text-center">
             <div className="relative h-48 mb-6 rounded-lg overflow-hidden">
               <Image
-                src="/images/students/book1.jpg"
+                src="/images/students/study-book.jpg"
                 alt="Proven Results"
                 fill
                 className="object-cover"
@@ -165,7 +165,7 @@ export default function About() {
           <div className="text-center">
             <div className="relative h-48 mb-6 rounded-lg overflow-hidden">
               <Image
-                src="/images/students/study1.jpg"
+                src="/images/students/tuition-student-english.jpg"
                 alt="Personalized Support"
                 fill
                 className="object-cover"

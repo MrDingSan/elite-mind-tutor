@@ -11,7 +11,7 @@ export default function Contact() {
       <div className="relative bg-navy">
         <div className="absolute inset-0">
           <Image
-            src="/images/students/classroom1.jpg"
+            src="/images/students/online-tuition.jpg"
             alt="Contact us"
             fill
             className="object-cover opacity-20"

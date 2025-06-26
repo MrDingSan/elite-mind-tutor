@@ -13,7 +13,8 @@ const blogPosts = [
     role: "Founder of EliteMind Tutor",
     date: "April 20, 2025",
     excerpt: "Singapore is often called the 'education hub of Asia'—and for good reason. With over 50 international schools offering globally recognized curricula such as IB, IGCSE, A-Levels, AP, and more, parents relocating to or living in Singapore are spoiled for choice.",
-    image: "/images/students/classroom1.jpg",
+    image: "/images/students/ib-tuition-group.jpg",
+    alt: "Group of IB students studying together",
     slug: "choosing-international-school-singapore-2025"
   },
   {
@@ -23,7 +24,8 @@ const blogPosts = [
     role: "Private Math Tutor with 13 Years of Experience",
     date: "June 17, 2025",
     excerpt: "A Singapore tutor's perspective on why learning feels so different in international schools and what parents can do to support their children's academic journey.",
-    image: "/images/students/classroom2.jpg",
+    image: "/images/students/private-tutor.jpg",
+    alt: "Private tutor helping a student with homework",
     slug: "do-international-schools-care-about-exam-scores"
   }
 ];
@@ -38,7 +40,7 @@ export default function Blog() {
       <div className="relative h-[40vh] min-h-[300px] overflow-hidden">
         <div className="absolute inset-0">
           <Image
-            src="/images/students/classroom2.jpg"
+            src="/images/students/private-tutor.jpg"
             alt="Students in classroom"
             fill
             className="object-cover"
@@ -67,7 +69,7 @@ export default function Blog() {
               <div className="relative h-48">
                 <Image
                   src={post.image}
-                  alt={post.title}
+                  alt={post.alt}
                   fill
                   className="object-cover"
                   quality={100}

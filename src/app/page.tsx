@@ -28,10 +28,10 @@ export default function Home() {
         {/* Background Image */}
         <div className="absolute inset-0 -z-10">
           <Image
-            src="/images/students/classroom1.jpg"
+            src="/images/students/tuition-in-classroom.jpg"
             alt="Classroom setting"
             fill
-            className="object-cover"
+            className="object-cover object-center"
             priority
             quality={100}
           />

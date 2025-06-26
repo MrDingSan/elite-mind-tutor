@@ -115,12 +115,12 @@ export default function FAQ() {
       />
       
       {/* Hero Section */}
-      <div className="bg-gradient-to-r from-indigo-600 to-indigo-800 py-20">
+      <div className="bg-gradient-to-r from-navy to-navy-800 py-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <h1 className="text-5xl font-bold text-white text-center mb-6">
             Frequently Asked Questions
           </h1>
-          <p className="mt-4 text-xl text-indigo-100 text-center max-w-3xl mx-auto">
+          <p className="mt-4 text-xl text-white/90 text-center max-w-3xl mx-auto">
             Find answers to common questions about our premium tutoring services. We're here to help you make the best decision for your child's education.
           </p>
         </div>
@@ -133,7 +133,7 @@ export default function FAQ() {
             <div key={category} className="bg-white rounded-xl shadow-xl overflow-hidden transform transition-all duration-300 hover:shadow-2xl">
               <button
                 onClick={() => toggleCategory(category)}
-                className="w-full px-8 py-6 text-left bg-gradient-to-r from-indigo-50 to-indigo-100 hover:from-indigo-100 hover:to-indigo-200 transition-colors"
+                className="w-full px-8 py-6 text-left bg-gradient-to-r from-navy/10 to-navy/5 hover:from-navy/20 hover:to-navy/10 transition-colors"
               >
                 <div className="flex justify-between items-center">
                   <div className="flex items-center space-x-4">
@@ -141,9 +141,9 @@ export default function FAQ() {
                     <h2 className="text-2xl font-semibold text-gray-900">{category}</h2>
                   </div>
                   {openCategory === category ? (
-                    <FaChevronUp className="h-6 w-6 text-indigo-600 transform transition-transform duration-300" />
+                    <FaChevronUp className="h-6 w-6 text-navy transform transition-transform duration-300" />
                   ) : (
-                    <FaChevronDown className="h-6 w-6 text-indigo-600 transform transition-transform duration-300" />
+                    <FaChevronDown className="h-6 w-6 text-navy transform transition-transform duration-300" />
                   )}
                 </div>
               </button>
@@ -159,13 +159,13 @@ export default function FAQ() {
                           className="w-full text-left group"
                         >
                           <div className="flex justify-between items-center">
-                            <h3 className="text-xl font-medium text-gray-900 group-hover:text-indigo-600 transition-colors">
+                            <h3 className="text-xl font-medium text-gray-900 group-hover:text-navy transition-colors">
                               {item.question}
                             </h3>
                             {openQuestions.has(item.question) ? (
-                              <FaChevronUp className="h-5 w-5 text-indigo-600 transform transition-transform duration-300" />
+                              <FaChevronUp className="h-5 w-5 text-navy transform transition-transform duration-300" />
                             ) : (
-                              <FaChevronDown className="h-5 w-5 text-indigo-600 transform transition-transform duration-300" />
+                              <FaChevronDown className="h-5 w-5 text-navy transform transition-transform duration-300" />
                             )}
                           </div>
                         </button>
@@ -187,7 +187,7 @@ export default function FAQ() {
         </div>
 
         {/* Contact CTA */}
-        <div className="mt-16 text-center bg-gradient-to-r from-indigo-50 to-indigo-100 rounded-xl p-12">
+        <div className="mt-16 text-center bg-gradient-to-r from-navy/10 to-navy/5 rounded-xl p-12">
           <h2 className="text-3xl font-bold text-gray-900 mb-4">
             Still have questions?
           </h2>
@@ -196,7 +196,7 @@ export default function FAQ() {
           </p>
           <a
             href="/contact"
-            className="inline-block bg-indigo-600 text-white px-8 py-4 rounded-lg text-lg font-semibold hover:bg-indigo-700 transition-colors transform hover:scale-105 duration-300 shadow-lg hover:shadow-xl"
+            className="inline-block bg-navy text-white px-8 py-4 rounded-lg text-lg font-semibold hover:bg-navy/90 transition-colors transform hover:scale-105 duration-300 shadow-lg hover:shadow-xl"
           >
             Contact Us Today
           </a>

@@ -12,8 +12,8 @@ const BlogPost = () => {
       <div className="relative h-[50vh] min-h-[400px] overflow-hidden">
         <div className="absolute inset-0">
           <Image
-            src="/images/students/classroom2.jpg"
-            alt="International School Classroom"
+            src="/images/students/tuition-student-english.jpg"
+            alt="Student learning English with tutor"
             fill
             className="object-cover"
             priority

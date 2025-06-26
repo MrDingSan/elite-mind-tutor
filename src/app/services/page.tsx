@@ -12,7 +12,7 @@ export default function Services() {
       <div className="relative bg-navy">
         <div className="absolute inset-0">
           <Image
-            src="/images/students/classroom1.jpg"
+            src="/images/students/ib-tuition-group.jpg"
             alt="Students learning"
             fill
             className="object-cover opacity-20"
@@ -39,7 +39,7 @@ export default function Services() {
           <div className="bg-white rounded-2xl shadow-lg overflow-hidden border border-gray-100">
             <div className="relative h-64">
               <Image
-                src="/images/students/study1.jpg"
+                src="/images/students/math-tuition.jpg"
                 alt="IGCSE Students"
                 fill
                 className="object-cover"
@@ -136,7 +136,7 @@ export default function Services() {
           <div className="bg-white rounded-2xl shadow-lg overflow-hidden border border-gray-100">
             <div className="relative h-64">
               <Image
-                src="/images/students/study2.jpg"
+                src="/images/students/physics-tuition.jpg"
                 alt="IB Students"
                 fill
                 className="object-cover"

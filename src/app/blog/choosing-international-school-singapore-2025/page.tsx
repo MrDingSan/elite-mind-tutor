@@ -12,7 +12,7 @@ export default function BlogPost() {
       <div className="relative h-[50vh] min-h-[400px] overflow-hidden">
         <div className="absolute inset-0">
           <Image
-            src="/images/students/classroom1.jpg"
+            src="/images/students/ib-tuition-group.jpg"
             alt="International School Classroom"
             fill
             className="object-cover"

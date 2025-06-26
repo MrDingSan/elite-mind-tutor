@@ -9,7 +9,7 @@ export default function Tutors() {
       <div className="relative bg-navy py-24">
         <div className="absolute inset-0">
           <Image
-            src="/images/students/classroom2.jpg"
+            src="/images/students/online-tuition.jpg"
             alt="Our Expert Tutors"
             fill
             className="object-cover opacity-20"
