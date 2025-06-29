@@ -3,7 +3,7 @@
 import React from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
-import { FaGraduationCap, FaBook, FaChartLine, FaUsers, FaAward, FaCalculator, FaCheckCircle, FaArrowRight, FaBrain } from 'react-icons/fa';
+import { FaBook, FaChartLine, FaCalculator, FaCheckCircle, FaArrowRight, FaBrain } from 'react-icons/fa';
 
 const mathTopics = [
   {

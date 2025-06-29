@@ -3,7 +3,7 @@
 import React from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
-import { FaGraduationCap, FaBook, FaChartLine, FaUsers, FaAward, FaGlobe, FaLightbulb, FaCheckCircle, FaArrowRight } from 'react-icons/fa';
+import { FaBook, FaChartLine, FaGlobe, FaLightbulb, FaCheckCircle, FaArrowRight } from 'react-icons/fa';
 
 const igcseSubjects = [
   {

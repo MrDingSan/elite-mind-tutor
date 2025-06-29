@@ -3,7 +3,7 @@
 import React from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
-import { FaGraduationCap, FaBook, FaChartLine, FaUsers, FaAward, FaFlask, FaCheckCircle, FaArrowRight, FaAtom } from 'react-icons/fa';
+import { FaBook, FaChartLine, FaFlask, FaCheckCircle, FaArrowRight, FaAtom } from 'react-icons/fa';
 
 const chemistryTopics = [
   {
