@@ -27,6 +27,17 @@ const blogPosts = [
     image: "/images/students/private-tutor.jpg",
     alt: "Private tutor helping a student with homework",
     slug: "do-international-schools-care-about-exam-scores"
+  },
+  {
+    id: 3,
+    title: "The Hidden Truth About One-on-One Tuition: A Tutor's Perspective Parents Need to Hear",
+    author: "Dr. Kevin",
+    role: "Founder of EliteMind Tutor",
+    date: "June 29, 2025",
+    excerpt: "After over a decade of working with international school students, here's what parents and students need to understand about the real value of private tutoring.",
+    image: "/images/students/tuition-student-english.jpg",
+    alt: "One-on-one tuition session with tutor",
+    slug: "the-hidden-truth-about-one-on-one-tuition"
   }
 ];
 
@@ -65,42 +76,41 @@ export default function Blog() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
         <div className="grid gap-8 md:grid-cols-2">
           {blogPosts.map((post) => (
-            <article key={post.id} className="bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition-shadow duration-300">
-              <div className="relative h-48">
-                <Image
-                  src={post.image}
-                  alt={post.alt}
-                  fill
-                  className="object-cover"
-                  quality={100}
-                />
-              </div>
-              <div className="p-6">
-                <div className="flex items-center space-x-4 text-sm text-gray-500 mb-3">
-                  <div className="flex items-center">
-                    <FaCalendarAlt className="mr-2" />
-                    {post.date}
+            <Link key={post.id} href={`/blog/${post.slug}`} className="group">
+              <article className="bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition-shadow duration-300 cursor-pointer">
+                <div className="relative h-48">
+                  <Image
+                    src={post.image}
+                    alt={post.alt}
+                    fill
+                    className="object-cover"
+                    quality={100}
+                  />
+                </div>
+                <div className="p-6">
+                  <div className="flex items-center space-x-4 text-sm text-gray-500 mb-3">
+                    <div className="flex items-center">
+                      <FaCalendarAlt className="mr-2" />
+                      {post.date}
+                    </div>
+                    <div className="flex items-center">
+                      <FaUser className="mr-2" />
+                      {post.author}
+                    </div>
                   </div>
-                  <div className="flex items-center">
-                    <FaUser className="mr-2" />
-                    {post.author}
+                  <h2 className="text-xl font-bold text-gray-900 mb-3 line-clamp-2 group-hover:text-navy transition-colors">
+                    {post.title}
+                  </h2>
+                  <p className="text-gray-600 mb-4 line-clamp-3">
+                    {post.excerpt}
+                  </p>
+                  <div className="inline-flex items-center text-indigo-600 group-hover:text-indigo-800 font-semibold">
+                    Read More
+                    <FaArrowRight className="ml-2 group-hover:translate-x-1 transition-transform" />
                   </div>
                 </div>
-                <h2 className="text-xl font-bold text-gray-900 mb-3 line-clamp-2">
-                  {post.title}
-                </h2>
-                <p className="text-gray-600 mb-4 line-clamp-3">
-                  {post.excerpt}
-                </p>
-                <Link
-                  href={`/blog/${post.slug}`}
-                  className="inline-flex items-center text-indigo-600 hover:text-indigo-800 font-semibold group"
-                >
-                  Read More
-                  <FaArrowRight className="ml-2 group-hover:translate-x-1 transition-transform" />
-                </Link>
-              </div>
-            </article>
+              </article>
+            </Link>
           ))}
         </div>
       </div>
