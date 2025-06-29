@@ -39,7 +39,7 @@ export default function Contact() {
               <FaPhone className="h-6 w-6 text-navy" />
             </div>
             <h3 className="text-xl font-semibold text-gray-900 mb-2">Phone</h3>
-            <p className="text-gray-600">+65 85159132</p>
+            <p className="text-gray-600">+65 91811623</p>
           </div>
           <div className="bg-white rounded-xl shadow-lg p-8 transform hover:-translate-y-1 transition-transform duration-200">
             <div className="w-12 h-12 bg-navy/10 rounded-lg flex items-center justify-center mb-6">

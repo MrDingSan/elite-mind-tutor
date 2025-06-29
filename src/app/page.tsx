@@ -63,10 +63,10 @@ export default function Home() {
                 </p>
                 <div className="flex items-center gap-3 text-[#4A4A5D]">
                   <FaWhatsapp className="w-6 h-6 text-[#25D366]" />
-                  <a href="https://wa.me/6585159132" className="text-lg font-medium hover:text-[#25D366] transition-colors">
-                    +65 8515 9132
-                  </a>
-                  <span className="text-sm">Call or WhatsApp us — we're happy to help</span>
+                  <div>
+                    <p className="font-semibold">+65 91811623</p>
+                    <span className="text-sm">Call or WhatsApp us — we're happy to help</span>
+                  </div>
                 </div>
               </div>
             </div>
@@ -238,7 +238,7 @@ export default function Home() {
               Need help choosing the right tutor?
             </h2>
             <p className="mt-4 text-lg leading-8 text-gray-600">
-              Call or WhatsApp us → <a href="https://wa.me/6585159132" className="text-navy hover:text-navy-600 transition-colors">+65 8515 9132</a>
+              Call or WhatsApp us → <a href="https://wa.me/6591811623" className="text-navy hover:text-navy-600 transition-colors">+65 91811623</a>
             </p>
             <div className="mt-8 flex justify-center">
               <Link
