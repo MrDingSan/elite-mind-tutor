@@ -3,7 +3,7 @@
 import React from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
-import { FaBook, FaChartLine, FaLaptop, FaCheckCircle, FaArrowRight, FaGlobe, FaVideo, FaClock, FaMapMarkerAlt, FaHeadset } from 'react-icons/fa';
+import { FaBook, FaLaptop, FaCheckCircle, FaArrowRight, FaGlobe, FaVideo, FaClock, FaHeadset } from 'react-icons/fa';
 
 const onlineBenefits = [
   {

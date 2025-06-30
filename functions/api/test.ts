@@ -1,4 +1,4 @@
-export const onRequest: PagesFunction = async (context) => {
+export const onRequest: PagesFunction = async (_context) => {
   return new Response(JSON.stringify({ message: 'Test endpoint working' }), {
     status: 200,
     headers: {
