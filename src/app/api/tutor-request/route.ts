@@ -118,9 +118,4 @@ export async function POST(request: Request) {
   }
 }
 
-// Dynamic runtime export for edge compatibility
-// eslint-disable-next-line
-// @ts-ignore
-if (process.env.NEXT_RUNTIME === "edge") {
-  Object.defineProperty(exports, "runtime", { value: "edge" });
-} 
+export const runtime = 'edge'; 
