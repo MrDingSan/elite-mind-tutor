@@ -1,15 +1,16 @@
 import { PrismaClient } from "@prisma/client";
-import { PrismaD1 } from '@prisma/adapter-d1';
 
-const globalForPrisma = globalThis as unknown as {
-  prisma: PrismaClient | undefined;
-};
+let prisma: PrismaClient;
 
-// Access the D1 instance from the environment
-const d1 = new PrismaD1(process.env.DB as unknown as D1Database); // Ensure 'DB' is defined in your environment
+if (process.env.NEXT_RUNTIME === "edge") {
+  // Only import D1 adapter if running on Edge
+  // @ts-ignore
+  const { PrismaD1 } = require('@prisma/adapter-d1');
+  // @ts-ignore
+  const d1 = new PrismaD1(process.env.DB as unknown as D1Database);
+  prisma = new PrismaClient({ adapter: d1 });
+} else {
+  prisma = new PrismaClient();
+}
 
-export const prisma = globalForPrisma.prisma ?? new PrismaClient({
-  adapter: d1,
-});
-
-if (process.env.NODE_ENV !== "production") globalForPrisma.prisma = prisma; 
+export { prisma }; 
