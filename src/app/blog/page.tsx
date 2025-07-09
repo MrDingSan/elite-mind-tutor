@@ -8,35 +8,46 @@ import { FaCalendarAlt, FaUser, FaArrowRight } from 'react-icons/fa';
 const blogPosts = [
   {
     id: 1,
+    title: "Will Gen-AI Kill the IB Extended Essay? A Deep Dive into the Future of Student Writing",
+    author: "Dr. Kevin",
+    role: "Founder of EliteMind Tutor",
+    date: "July 8, 2025",
+    excerpt: "How to stay ahead ethically and intelligently in the age of AI. Learn the traps most students will fall into and how to use AI as a thinking partner, not a replacement.",
+    image: "/images/blog/student-self-study-in-library.jpg",
+    alt: "Student studying and writing in library",
+    slug: "will-gen-ai-kill-ib-extended-essay"
+  },
+  {
+    id: 2,
     title: "The Ultimate Guide to Choosing an International School in Singapore (2025 Edition)",
     author: "Dr. Kevin",
     role: "Founder of EliteMind Tutor",
     date: "April 20, 2025",
     excerpt: "Singapore is often called the 'education hub of Asia'—and for good reason. With over 50 international schools offering globally recognized curricula such as IB, IGCSE, A-Levels, AP, and more, parents relocating to or living in Singapore are spoiled for choice.",
-    image: "/images/students/ib-tuition-group.jpg",
-    alt: "Group of IB students studying together",
+    image: "/images/blog/group-tuition-in-classroom.jpg",
+    alt: "Group of students in international school classroom",
     slug: "choosing-international-school-singapore-2025"
   },
   {
-    id: 2,
+    id: 3,
     title: "Do International Schools Really Care About Exam Scores?",
     author: "Kevin Ling",
     role: "Private Math Tutor with 13 Years of Experience",
     date: "June 17, 2025",
     excerpt: "A Singapore tutor's perspective on why learning feels so different in international schools and what parents can do to support their children's academic journey.",
-    image: "/images/students/private-tutor.jpg",
+    image: "/images/blog/private-tutor.jpg",
     alt: "Private tutor helping a student with homework",
     slug: "do-international-schools-care-about-exam-scores"
   },
   {
-    id: 3,
+    id: 4,
     title: "The Hidden Truth About One-on-One Tuition: A Tutor's Perspective Parents Need to Hear",
     author: "Dr. Kevin",
     role: "Founder of EliteMind Tutor",
     date: "June 29, 2025",
     excerpt: "After over a decade of working with international school students, here's what parents and students need to understand about the real value of private tutoring.",
-    image: "/images/students/tuition-student-english.jpg",
-    alt: "One-on-one tuition session with tutor",
+    image: "/images/blog/student-tuition-in-classroom.jpg",
+    alt: "One-on-one tuition session in classroom",
     slug: "the-hidden-truth-about-one-on-one-tuition"
   }
 ];
