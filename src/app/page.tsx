@@ -1,28 +1,46 @@
+import type { Metadata } from 'next';
 import React from 'react';
 import Link from "next/link";
 import { FaGraduationCap, FaBook, FaStar, FaQuestionCircle, FaWhatsapp, FaChalkboardTeacher, FaAward } from "react-icons/fa";
-import Head from 'next/head';
 import Testimonials from '@/components/Testimonials';
 import Image from 'next/image';
 
+export const metadata: Metadata = {
+  title: 'EliteMind Tutor – IB & IGCSE Tuition in Singapore for International School Students',
+  description:
+    'EliteMind Tutor connects international school students in Singapore with expert IB and IGCSE tutors. Personalized one-on-one tuition, strong exam results, and support for top university pathways.',
+  alternates: {
+    canonical: 'https://elite-mind-tutor.vercel.app/',
+  },
+  openGraph: {
+    title: 'EliteMind Tutor – IB & IGCSE Tuition in Singapore',
+    description:
+      'Premium IB and IGCSE tutoring for international school students in Singapore. One-on-one support, subject specialists, and proven track record.',
+    url: 'https://elite-mind-tutor.vercel.app/',
+    type: 'website',
+  },
+};
+
 export default function Home() {
+  const organizationSchema = {
+    "@context": "https://schema.org",
+    "@type": "EducationalOrganization",
+    "name": "EliteMind Tutor",
+    "url": "https://elite-mind-tutor.vercel.app",
+    "description": "EliteMind Tutor provides IB and IGCSE tutoring services for international school students in Singapore.",
+    "areaServed": "Singapore",
+    "address": {
+      "@type": "PostalAddress",
+      "addressCountry": "SG"
+    }
+  };
+
   return (
     <div className="relative isolate">
-      <Head>
-        <script type="application/ld+json">
-          {JSON.stringify({
-            "@context": "https://schema.org",
-            "@type": "Organization",
-            "name": "EliteMind Tutor",
-            "url": "https://elite-mind-tutor.pages.dev",
-            "description": "EliteMind Tutor - Your trusted source for tutoring services.",
-            "address": {
-              "@type": "PostalAddress",
-              "addressCountry": "US"
-            }
-          })}
-        </script>
-      </Head>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationSchema) }}
+      />
       {/* Hero section */}
       <div className="relative pt-14">
         {/* Background Image */}
@@ -259,4 +277,3 @@ export default function Home() {
     </div>
   );
 }
-

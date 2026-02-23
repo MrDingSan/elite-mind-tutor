@@ -2,15 +2,16 @@ import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
 import { cn } from "@/lib/utils";
+import { GOOGLE_SITE_VERIFICATION, SITE_NAME, SITE_URL } from "@/lib/seo";
 import Navigation from "@/components/Navigation";
 import WhatsAppButton from '@/components/WhatsAppButton';
 
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  metadataBase: new URL('https://elite-mind-tutor.pages.dev'),
+  metadataBase: new URL(SITE_URL),
   title: {
-    default: 'EliteMind Tutor - Expert IGCSE & IB Tutoring in Singapore',
+    default: `${SITE_NAME} - Expert IGCSE & IB Tutoring in Singapore`,
     template: '%s | EliteMind Tutor'
   },
   description: 'Expert IGCSE & IB tutoring services in Singapore. Personalized learning plans, experienced tutors, and proven results.',
@@ -36,24 +37,24 @@ export const metadata: Metadata = {
   openGraph: {
     type: 'website',
     locale: 'en_SG',
-    url: 'https://elite-mind-tutor.pages.dev',
-    siteName: 'EliteMind Tutor',
-    title: 'EliteMind Tutor - Expert IGCSE & IB Tutoring in Singapore',
+    url: SITE_URL,
+    siteName: SITE_NAME,
+    title: `${SITE_NAME} - Expert IGCSE & IB Tutoring in Singapore`,
     description: 'Expert IGCSE & IB tutoring services in Singapore. Personalized learning plans, experienced tutors, and proven results.',
     images: [
       {
-        url: '/images/logo/logo without words.png',
+        url: '/images/logo/logo-without-words.png',
         width: 800,
         height: 600,
-        alt: 'EliteMind Tutor',
+        alt: SITE_NAME,
       },
     ],
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'EliteMind Tutor - Expert IGCSE & IB Tutoring in Singapore',
+    title: `${SITE_NAME} - Expert IGCSE & IB Tutoring in Singapore`,
     description: 'Expert IGCSE & IB tutoring services in Singapore. Personalized learning plans, experienced tutors, and proven results.',
-    images: ['/images/logo/logo without words.png'],
+    images: ['/images/logo/logo-without-words.png'],
   },
   robots: {
     index: true,
@@ -66,9 +67,13 @@ export const metadata: Metadata = {
       'max-snippet': -1,
     },
   },
-  verification: {
-    google: 'your-google-site-verification', // Replace with your Google Search Console verification code
-  },
+  ...(GOOGLE_SITE_VERIFICATION
+    ? {
+        verification: {
+          google: GOOGLE_SITE_VERIFICATION,
+        },
+      }
+    : {}),
 };
 
 export default function RootLayout({
