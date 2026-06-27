@@ -10,13 +10,13 @@ export const metadata: Metadata = {
   description:
     'EliteMind Tutor connects international school students in Singapore with expert IB and IGCSE tutors. Personalized one-on-one tuition, strong exam results, and support for top university pathways.',
   alternates: {
-    canonical: 'https://elite-mind-tutor.vercel.app/',
+    canonical: 'https://elitemindtutor.com/',
   },
   openGraph: {
     title: 'EliteMind Tutor – IB & IGCSE Tuition in Singapore',
     description:
       'Premium IB and IGCSE tutoring for international school students in Singapore. One-on-one support, subject specialists, and proven track record.',
-    url: 'https://elite-mind-tutor.vercel.app/',
+    url: 'https://elitemindtutor.com/',
     type: 'website',
   },
 };
@@ -26,7 +26,7 @@ export default function Home() {
     "@context": "https://schema.org",
     "@type": "EducationalOrganization",
     "name": "EliteMind Tutor",
-    "url": "https://elite-mind-tutor.vercel.app",
+    "url": "https://elitemindtutor.com",
     "description": "EliteMind Tutor provides IB and IGCSE tutoring services for international school students in Singapore.",
     "areaServed": "Singapore",
     "address": {

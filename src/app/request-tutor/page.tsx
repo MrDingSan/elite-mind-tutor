@@ -1,4 +1,21 @@
+import type { Metadata } from 'next';
 import TutorRequestForm from "@/components/TutorRequestForm";
+
+export const metadata: Metadata = {
+  title: 'Request a Tutor – IB & IGCSE Tuition Enquiry Form | EliteMind Tutor',
+  description:
+    'Tell EliteMind Tutor about your child’s IB or IGCSE subjects, school and goals. We’ll match you with a specialist tutor in Singapore within 24 hours.',
+  alternates: {
+    canonical: 'https://elitemindtutor.com/request-tutor',
+  },
+  openGraph: {
+    title: 'Request an IB or IGCSE Tutor | EliteMind Tutor Singapore',
+    description:
+      'Submit your tutoring request and get matched with an experienced IB or IGCSE tutor for your international school child.',
+    url: 'https://elitemindtutor.com/request-tutor',
+    type: 'website',
+  },
+};
 
 export default function RequestTutorPage() {
   return (

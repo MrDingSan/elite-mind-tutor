@@ -7,6 +7,17 @@ import { FaCalendarAlt, FaUser, FaArrowRight } from 'react-icons/fa';
 
 const blogPosts = [
   {
+    id: 5,
+    title: "IB Math AA vs AI: Which Course Should Singapore International School Students Choose?",
+    author: "Kevin Ling",
+    role: "IB Math Tutor in Singapore",
+    date: "June 27, 2026",
+    excerpt: "A parent-friendly guide to choosing between IB Mathematics: Analysis and Approaches and Applications and Interpretation, with practical advice for university goals, confidence, and tutoring support.",
+    image: "/images/students/math-tuition.jpg",
+    alt: "IB math student working through exam questions with a tutor",
+    slug: "ib-math-aa-vs-ai-singapore"
+  },
+  {
     id: 1,
     title: "Will Gen-AI Kill the IB Extended Essay? A Deep Dive into the Future of Student Writing",
     author: "Dr. Kevin",

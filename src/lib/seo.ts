@@ -1,5 +1,5 @@
 export const SITE_NAME = "EliteMind Tutor";
-export const DEFAULT_SITE_URL = "https://elite-mind-tutor.vercel.app";
+export const DEFAULT_SITE_URL = "https://elitemindtutor.com";
 
 const configuredSiteUrl = process.env.NEXT_PUBLIC_SITE_URL?.trim();
 

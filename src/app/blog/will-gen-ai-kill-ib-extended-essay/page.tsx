@@ -1,9 +1,36 @@
-"use client";
-
+import type { Metadata } from 'next';
 import React from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
 import { FaCalendarAlt, FaUser, FaArrowLeft, FaLightbulb, FaExclamationTriangle, FaCheckCircle, FaRocket } from 'react-icons/fa';
+
+export const metadata: Metadata = {
+  title:
+    'Will Gen-AI Kill the IB Extended Essay? A Deep Dive into the Future of Student Writing | EliteMind Tutor',
+  description:
+    'Discover how IB students can use generative AI tools like ChatGPT and Claude ethically for the Extended Essay and Internal Assessments, avoid common AI traps, and impress IB examiners with original, high-scoring work.',
+  alternates: {
+    canonical:
+      'https://elitemindtutor.com/blog/will-gen-ai-kill-ib-extended-essay',
+  },
+  openGraph: {
+    title:
+      'Will Gen-AI Kill the IB Extended Essay? | EliteMind Tutor IB Writing Guide',
+    description:
+      'Learn how to partner with AI for your IB Extended Essay instead of letting it replace your thinking — practical strategies to stay ethical, original, and examiner-ready.',
+    url: 'https://elitemindtutor.com/blog/will-gen-ai-kill-ib-extended-essay',
+    type: 'article',
+    siteName: 'EliteMind Tutor',
+    images: [
+      {
+        url: 'https://elitemindtutor.com/images/blog/student-self-study-in-library.jpg',
+        width: 1200,
+        height: 630,
+        alt: 'IB student studying and writing their Extended Essay in a library',
+      },
+    ],
+  },
+};
 
 export default function BlogPost() {
   return (
@@ -246,6 +273,53 @@ export default function BlogPost() {
             <p className="text-indigo-700 mb-4">
               If you'd like, I can help create a step-by-step "AI + EE workflow guide", with sample prompts and example reflections, tailored for IB students. Just ask!
             </p>
+          </div>
+
+          <div className="mt-12">
+            <h2 className="text-2xl font-bold text-gray-900 mb-6">Related Articles</h2>
+            <div className="grid gap-8 md:grid-cols-2">
+              <Link href="/blog/the-hidden-truth-about-one-on-one-tuition" className="group">
+                <article className="bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition-shadow duration-300 cursor-pointer">
+                  <div className="relative h-48">
+                    <Image
+                      src="/images/students/tuition-student-english.jpg"
+                      alt="One-on-one tuition session in Singapore"
+                      fill
+                      className="object-cover"
+                    />
+                  </div>
+                  <div className="p-6">
+                    <h3 className="text-lg font-semibold text-gray-900 mb-2 group-hover:text-indigo-700 transition-colors">
+                      The Hidden Truth About One-on-One Tuition: A Tutor&apos;s Perspective Parents Need to Hear
+                    </h3>
+                    <p className="text-gray-600 text-sm">
+                      A decade-long tutor&apos;s perspective on how to get real value from one-on-one tuition for international school students.
+                    </p>
+                  </div>
+                </article>
+              </Link>
+
+              <Link href="/blog/do-international-schools-care-about-exam-scores" className="group">
+                <article className="bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition-shadow duration-300 cursor-pointer">
+                  <div className="relative h-48">
+                    <Image
+                      src="/images/students/private-tutor.jpg"
+                      alt="Private tutor helping an international school student"
+                      fill
+                      className="object-cover"
+                    />
+                  </div>
+                  <div className="p-6">
+                    <h3 className="text-lg font-semibold text-gray-900 mb-2 group-hover:text-indigo-700 transition-colors">
+                      Do International Schools Really Care About Exam Scores?
+                    </h3>
+                    <p className="text-gray-600 text-sm">
+                      How international schools think about grades, exams, and long-term learning — and what that means for your child.
+                    </p>
+                  </div>
+                </article>
+              </Link>
+            </div>
           </div>
 
           <div className="flex justify-center mt-12">

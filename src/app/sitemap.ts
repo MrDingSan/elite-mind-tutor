@@ -34,6 +34,7 @@ const staticRoutes: Array<{
 ];
 
 const blogRoutes = [
+  "/blog/ib-math-aa-vs-ai-singapore",
   "/blog/choosing-international-school-singapore-2025",
   "/blog/do-international-schools-care-about-exam-scores",
   "/blog/the-hidden-truth-about-one-on-one-tuition",
