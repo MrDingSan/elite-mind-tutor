@@ -4,6 +4,12 @@
 
 This round focused on fixing a canonical/domain signal issue and publishing new long-tail SEO articles for Singapore international school families.
 
+## Scorecard
+
+- Current SEO growth score: `34 / 100`
+- Scorecard file: `reports/seo/scorecard.md`
+- Confidence: Medium-low until Google Search Console and conversion tracking are connected.
+
 ## Findings
 
 1. `https://elitemindtutor.com/robots.txt` and `https://elitemindtutor.com/sitemap.xml` were still pointing crawlers to `https://elite-mind-tutor.vercel.app`.
