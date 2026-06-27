@@ -7,6 +7,17 @@ import { FaCalendarAlt, FaUser, FaArrowRight } from 'react-icons/fa';
 
 const blogPosts = [
   {
+    id: 6,
+    title: "IGCSE Math Tuition in Singapore: When Does Your Child Really Need Extra Help?",
+    author: "Kevin Ling",
+    role: "IGCSE Math Tutor in Singapore",
+    date: "June 27, 2026",
+    excerpt: "A practical guide for international school parents on the warning signs, timing, and best use of IGCSE math tuition before exam pressure builds.",
+    image: "/images/blog/private-math-tuition.jpg",
+    alt: "Private math tuition session with a student",
+    slug: "igcse-math-tuition-singapore"
+  },
+  {
     id: 5,
     title: "IB Math AA vs AI: Which Course Should Singapore International School Students Choose?",
     author: "Kevin Ling",
