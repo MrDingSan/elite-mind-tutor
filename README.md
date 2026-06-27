@@ -34,12 +34,27 @@ A premium tutoring platform connecting qualified tutors with international schoo
    DATABASE_URL="your_database_url"
    NEXTAUTH_SECRET="your_nextauth_secret"
    NEXTAUTH_URL="http://localhost:3000"
+   TELEGRAM_BOT_TOKEN="your_telegram_bot_token"
+   TELEGRAM_CHAT_ID="your_telegram_chat_id"
    ```
+   `TELEGRAM_BOT_TOKEN` and `TELEGRAM_CHAT_ID` are used for tutor request alerts and SEO scorecard summaries. Set the same variables in Cloudflare Pages for production.
 4. Run the development server:
    ```bash
    npm run dev
    ```
 5. Open [http://localhost:3000](http://localhost:3000) in your browser
+
+## Telegram Notifications
+
+- Tutor request submissions send a Telegram alert automatically after the request is stored.
+- SEO runs can send a scorecard/report summary with:
+  ```bash
+  npm run seo:notify
+  ```
+- To send a specific report:
+  ```bash
+  npm run seo:notify -- reports/seo/2026-06-27-seo-growth-round.md
+  ```
 
 ## Project Structure
 

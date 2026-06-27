@@ -1,4 +1,5 @@
 import { prisma } from '@/lib/prisma';
+import { notifyTutorRequestSubmitted } from '@/lib/telegram';
 
 // Add CORS headers
 const corsHeaders = {
@@ -89,6 +90,25 @@ export async function POST(request: Request) {
         status: 'PENDING',
         studentId: studentId
       }
+    });
+
+    await notifyTutorRequestSubmitted({
+      id: tutorRequest.id,
+      requesterName: tutorRequest.requesterName,
+      requesterEmail: tutorRequest.requesterEmail,
+      requesterPhone: tutorRequest.requesterPhone,
+      requesterRole: tutorRequest.requesterRole,
+      studentName: tutorRequest.studentName,
+      studentGender: tutorRequest.studentGender,
+      studentSchool: tutorRequest.studentSchool || '',
+      studentGrade: tutorRequest.studentGrade,
+      subjects: body.subjects || [],
+      curriculum: tutorRequest.curriculum,
+      preferredFrequency: tutorRequest.preferredFrequency,
+      preferredDuration: tutorRequest.preferredDuration,
+      preferredTutorType: tutorRequest.preferredTutorType,
+      address: tutorRequest.address,
+      additionalNotes: tutorRequest.additionalNotes || '',
     });
 
     return new Response(JSON.stringify({ 

@@ -1,5 +1,7 @@
 interface Env {
   DB: D1Database;
+  TELEGRAM_BOT_TOKEN?: string;
+  TELEGRAM_CHAT_ID?: string;
 }
 
 interface TutorRequestData {
@@ -63,6 +65,66 @@ interface TutorRequestResult {
   createdAt: string;
   updatedAt: string;
   studentId: number;
+}
+
+function valueOrDash(value?: string | number | null) {
+  if (value === undefined || value === null || value === '') {
+    return '-';
+  }
+  return String(value);
+}
+
+function formatTutorRequestTelegramMessage(data: TutorRequestResponse) {
+  const subjects = data.subjects?.length ? data.subjects.join(', ') : '-';
+
+  return [
+    'New tutor request',
+    '',
+    `Request ID: ${valueOrDash(data.id)}`,
+    `Requester: ${valueOrDash(data.requesterName)} (${valueOrDash(data.requesterRole)})`,
+    `Email: ${valueOrDash(data.requesterEmail)}`,
+    `Phone: ${valueOrDash(data.requesterPhone)}`,
+    '',
+    `Student: ${valueOrDash(data.studentName)} (${valueOrDash(data.studentGender)})`,
+    `School: ${valueOrDash(data.studentSchool)}`,
+    `Grade: ${valueOrDash(data.studentGrade)}`,
+    `Curriculum: ${valueOrDash(data.curriculum)}`,
+    `Subjects: ${subjects}`,
+    '',
+    `Frequency: ${valueOrDash(data.preferredFrequency)}`,
+    `Duration: ${valueOrDash(data.preferredDuration)}`,
+    `Tutor type: ${valueOrDash(data.preferredTutorType)}`,
+    `Address: ${valueOrDash(data.address)}`,
+    '',
+    `Notes: ${valueOrDash(data.additionalNotes)}`,
+  ].join('\n');
+}
+
+async function sendTelegramMessage(env: Env, text: string) {
+  if (!env.TELEGRAM_BOT_TOKEN || !env.TELEGRAM_CHAT_ID) {
+    console.warn('Telegram notification skipped: TELEGRAM_BOT_TOKEN or TELEGRAM_CHAT_ID is missing.');
+    return;
+  }
+
+  try {
+    const response = await fetch(`https://api.telegram.org/bot${env.TELEGRAM_BOT_TOKEN}/sendMessage`, {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({
+        chat_id: env.TELEGRAM_CHAT_ID,
+        text,
+        disable_web_page_preview: true,
+      }),
+    });
+
+    if (!response.ok) {
+      console.error('Telegram notification failed:', response.status, await response.text());
+    }
+  } catch (error) {
+    console.error('Telegram notification error:', error);
+  }
 }
 
 export const onRequest: PagesFunction<Env> = async (context) => {
@@ -222,6 +284,8 @@ export const onRequest: PagesFunction<Env> = async (context) => {
 
     console.log('Sending response:', response);
     console.log('=== Request End ===');
+
+    await sendTelegramMessage(context.env, formatTutorRequestTelegramMessage(response));
 
     return new Response(
       JSON.stringify({ data: response }),
