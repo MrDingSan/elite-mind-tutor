@@ -50,6 +50,12 @@ export default function Navigation() {
                 Services
               </Link>
               <Link
+                href="/singapore-tuition"
+                className="inline-flex items-center border-b-2 border-transparent px-1 pt-1 text-sm font-medium text-gray-500 hover:border-navy hover:text-navy"
+              >
+                Tuition
+              </Link>
+              <Link
                 href="/tutors"
                 className="inline-flex items-center border-b-2 border-transparent px-1 pt-1 text-sm font-medium text-gray-500 hover:border-navy hover:text-navy"
               >
@@ -115,6 +121,12 @@ export default function Navigation() {
               className="block border-l-4 border-transparent py-2 pl-3 pr-4 text-base font-medium text-gray-500 hover:border-navy hover:bg-gray-50 hover:text-navy"
             >
               Services
+            </Link>
+            <Link
+              href="/singapore-tuition"
+              className="block border-l-4 border-transparent py-2 pl-3 pr-4 text-base font-medium text-gray-500 hover:border-navy hover:bg-gray-50 hover:text-navy"
+            >
+              Singapore Tuition
             </Link>
             <Link
               href="/tutors"

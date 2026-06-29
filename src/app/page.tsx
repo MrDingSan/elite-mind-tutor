@@ -169,6 +169,50 @@ export default function Home() {
         </div>
       </div>
 
+      {/* Popular Search Paths */}
+      <div className="bg-white py-20 sm:py-24">
+        <div className="mx-auto max-w-7xl px-6 lg:px-8">
+          <div className="mx-auto max-w-3xl text-center">
+            <p className="text-sm font-semibold uppercase tracking-[0.2em] text-navy">
+              Popular tuition searches
+            </p>
+            <h2 className="mt-4 text-3xl font-serif tracking-tight text-gray-900 sm:text-4xl">
+              Find the right Singapore tutor by subject or curriculum
+            </h2>
+            <p className="mt-4 text-lg leading-8 text-gray-600">
+              Parents often start with broad searches like Singapore tuition, private tutor Singapore, IB tuition, or IGCSE tuition. These paths help you quickly find the right support.
+            </p>
+          </div>
+          <div className="mx-auto mt-12 grid max-w-6xl grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3">
+            {[
+              { href: "/singapore-tuition", label: "Singapore Tuition Agency", text: "Private tutor matching for IB, IGCSE, and international school students." },
+              { href: "/ib-tuition", label: "IB Tuition Singapore", text: "SL and HL support for IB Math, Sciences, English, and Economics." },
+              { href: "/igcse-tuition", label: "IGCSE Tuition Singapore", text: "Exam-focused tutoring for Core and Extended IGCSE subjects." },
+              { href: "/math-tuition", label: "Math Tuition", text: "IB Math AA/AI, IGCSE Mathematics, algebra, calculus, and exam practice." },
+              { href: "/physics-tuition", label: "Physics Tuition", text: "Mechanics, electricity, waves, and structured paper practice." },
+              { href: "/online-tuition", label: "Online Tuition", text: "Flexible online support for busy international school schedules." },
+            ].map((item) => (
+              <Link
+                key={item.href}
+                href={item.href}
+                className="group rounded-2xl border border-gray-100 bg-[#FAFAFC] p-6 shadow-sm transition hover:-translate-y-1 hover:border-navy/30 hover:shadow-lg"
+              >
+                <h3 className="text-lg font-semibold text-gray-900 group-hover:text-navy">
+                  {item.label}
+                </h3>
+                <p className="mt-3 text-sm leading-6 text-gray-600">{item.text}</p>
+                <span className="mt-5 inline-flex items-center text-sm font-semibold text-navy">
+                  Learn more
+                  <svg className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" viewBox="0 0 20 20" fill="currentColor">
+                    <path fillRule="evenodd" d="M7.21 14.77a.75.75 0 01.02-1.06L11.168 10 7.23 6.29a.75.75 0 111.04-1.08l4.5 4.25a.75.75 0 010 1.08l-4.5 4.25a.75.75 0 01-1.06-.02z" clipRule="evenodd" />
+                  </svg>
+                </span>
+              </Link>
+            ))}
+          </div>
+        </div>
+      </div>
+
       {/* Testimonials Section */}
       <Testimonials />
 

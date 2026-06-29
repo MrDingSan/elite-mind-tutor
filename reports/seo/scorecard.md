@@ -1,10 +1,10 @@
 # EliteMind Tutor SEO Scorecard
 
-Last updated: 2026-06-27
+Last updated: 2026-06-29
 
 ## Current Score
 
-Overall SEO growth score: **34 / 100**
+Overall SEO growth score: **38 / 100**
 
 Confidence level: **Medium-low** until Google Search Console and conversion tracking are connected.
 
@@ -16,9 +16,9 @@ This score is not an official Google metric. It is an internal benchmark so each
 | --- | ---: | ---: | --- |
 | Technical SEO | 16 / 20 | 20 | Robots, sitemap, canonical domain, noindex controls, image compression, and metadata foundations are now mostly healthy. |
 | Indexation | 5 / 20 | 20 | Sitemap is live, but indexed-page coverage is still early and needs Google Search Console confirmation. |
-| Content Growth | 8 / 20 | 20 | Service pages exist and two new long-tail articles were added, but topical depth is still thin. |
+| Content Growth | 11 / 20 | 20 | Service pages, two long-tail articles, and a new Singapore tuition commercial hub now exist, but topical depth is still early versus established agencies. |
 | Keyword Visibility | 2 / 20 | 20 | The site is not yet visibly ranking for target Singapore tuition terms. Needs Search Console/rank tracking. |
-| Conversion Signals | 3 / 20 | 20 | Request tutor and WhatsApp CTAs exist, but form submissions, WhatsApp clicks, and blog-assisted enquiries are not tracked yet. |
+| Conversion Signals | 4 / 20 | 20 | Request tutor and WhatsApp CTAs exist, and the new commercial hub has clearer conversion paths. Form submissions, WhatsApp clicks, and blog-assisted enquiries still need tracking. |
 
 ## Baseline Snapshot
 
@@ -73,3 +73,29 @@ Next actions:
 3. Add conversion tracking for tutor form submissions and WhatsApp clicks.
 4. Publish the next article targeting `IB Physics tutor Singapore`.
 5. Refactor blog content into a shared data source to reduce manual publishing steps.
+
+### 2026-06-29
+
+Score: **38 / 100**
+
+Completed:
+
+- Studied Singapore tuition competitors including SmileTutor, FamilyTutor, and Tutor City.
+- Added `/singapore-tuition` as a broad commercial landing page for `Singapore tuition`, `private tutor Singapore`, and `tuition agency Singapore` intent.
+- Added FAQ structured data and educational service structured data to the new page.
+- Added a homepage `Popular tuition searches` internal-link block.
+- Added the new page to desktop/mobile navigation and sitemap.
+- Created competitor analysis report: `reports/seo/2026-06-29-competitor-round.md`.
+
+Main gaps:
+
+- No Google Search Console query data is connected yet, so keyword visibility remains unverified.
+- Competitors still have much larger indexed footprints, rates pages, tutor profile depth, reviews, and backlink authority.
+- Major subject pages still need FAQ schema and stronger proof sections.
+
+Next actions:
+
+1. Build a dedicated `/tuition-rates-singapore` page or expand transparent pricing guidance.
+2. Add FAQ schema to `/ib-tuition`, `/igcse-tuition`, and major subject pages.
+3. Add stronger tutor profile examples and parent review proof.
+4. Connect Google Search Console to track impressions and clicks for `/singapore-tuition`.
