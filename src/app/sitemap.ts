@@ -21,7 +21,7 @@ const staticRoutes: Array<{
   { path: "/services/ib/subjects/chemistry", changeFrequency: "monthly", priority: 0.8 },
   { path: "/services/igcse/subjects/math", changeFrequency: "monthly", priority: 0.8 },
   { path: "/services/igcse/subjects/physics", changeFrequency: "monthly", priority: 0.8 },
-  { path: "/services/igcse/subjects/chemistry", chaneFrequency: "monthly", priority: 0.8 },
+  { path: "/services/igcse/subjects/chemistry", changeFrequency: "monthly", priority: 0.8 },
   { path: "/tutors", changeFrequency: "monthly", priority: 0.8 },
   { path: "/online-tuition", changeFrequency: "monthly", priority: 0.8 },
   { path: "/math-tuition", changeFrequency: "monthly", priority: 0.8 },
